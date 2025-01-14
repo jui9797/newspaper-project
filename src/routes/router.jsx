@@ -6,6 +6,9 @@ import Signup from "../components/Signup";
 import Login from "../components/Login";
 import Subscription from "../pages/subscription/subscription";
 import MyProfile from "../components/MyProfile";
+import Dashboard from "../pages/dashboard/Dashboard";
+import AllUsers from "../pages/adminDashboard/AllUsers";
+import AllArticles from "../pages/allArticles/AllArticles";
 
 const router = createBrowserRouter([
     {
@@ -32,8 +35,22 @@ const router = createBrowserRouter([
         {
             path:'/myProfile',
             element:<MyProfile></MyProfile>
+        },
+        {
+            path:'/allArticles',
+            element:<AllArticles></AllArticles>
         }
       ]
     },
+    {
+        path:'/dashboard',
+        element:<Dashboard></Dashboard>,
+        children:[
+            {
+                path:'users',
+                element:<AllUsers></AllUsers>
+            }
+        ]
+    }
   ]);
   export default router;

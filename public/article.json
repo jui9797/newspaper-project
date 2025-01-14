@@ -1,0 +1,87 @@
+[
+    {
+      
+      "title": "Global Warming: A Threat to Our Future",
+      "image": "https://example.com/images/global-warming.jpg",
+      "publisher": "Daily News Today",
+      "description": "Global warming is a pressing issue affecting every corner of the planet. Rising temperatures, melting ice caps, and erratic weather patterns are the consequences of increased greenhouse gas emissions. Scientists emphasize the urgent need for collective action to curb this crisis. Governments, industries, and individuals must collaborate to reduce carbon footprints and adopt sustainable practices. The future of our planet depends on the choices we make today. Awareness and education are key to ensuring a livable world for future generations. Let us join hands to combat global warming and create a brighter, greener tomorrow.",
+      "view": 1540,
+      "authorName": "John Smith",
+      "authorEmail": "john.smith@example.com",
+      "authorPhoto": "https://example.com/images/john-smith.jpg",
+      "postedDate": "2025-01-10",
+      "status": "normal",
+      "category":"social"
+    },
+    {
+      
+      "title": "The Rise of Artificial Intelligence in Daily Life",
+      "image": "https://example.com/images/ai-rise.jpg",
+      "publisher": "Tech World Daily",
+      "description": "Artificial Intelligence (AI) is revolutionizing the way we live and work. From virtual assistants to autonomous vehicles, AI technologies are transforming industries and improving efficiency. However, this rapid development also raises ethical and societal questions, such as data privacy and job displacement. Experts stress the importance of responsible AI deployment to maximize benefits while minimizing risks. As AI continues to evolve, public awareness and policy frameworks will play a crucial role in shaping its impact on society. Embracing this technology thoughtfully can lead to significant advancements in healthcare, education, and beyond.",
+      "view": 2310,
+      "authorName": "Emma Johnson",
+      "authorEmail": "emma.johnson@example.com",
+      "authorPhoto": "https://example.com/images/emma-johnson.jpg",
+      "postedDate": "2025-01-11",
+      "status": "premium",
+      "category":"science"
+    },
+    {
+      
+      "title": "Healthy Eating: A Key to Longevity",
+      "image": "https://example.com/images/healthy-eating.jpg",
+      "publisher": "Wellness Weekly",
+      "description": "Maintaining a healthy diet is essential for a long and vibrant life. Incorporating a variety of fruits, vegetables, whole grains, and lean proteins into your meals can boost your overall well-being. Experts suggest that avoiding processed foods and sugary drinks can reduce the risk of chronic diseases such as diabetes and heart conditions. Staying hydrated and practicing portion control are equally important. By making informed dietary choices, individuals can enhance their physical health, mental clarity, and energy levels. A balanced diet not only nourishes the body but also sets the foundation for a fulfilling lifestyle.",
+      "view": 1875,
+      "authorName": "Sophia Brown",
+      "authorEmail": "sophia.brown@example.com",
+      "authorPhoto": "https://example.com/images/sophia-brown.jpg",
+      "postedDate": "2025-01-12",
+      "status": "premium",
+      "category":"health"
+    },
+    {
+     
+      "title": "Exploring the Mysteries of the Deep Ocean",
+      "image": "https://example.com/images/deep-ocean.jpg",
+      "publisher": "Nature Explorers",
+      "description": "The deep ocean remains one of the least explored frontiers on Earth. Despite covering over 70% of the planet, its depths harbor countless mysteries waiting to be uncovered. Researchers have discovered unique ecosystems and creatures that thrive in extreme conditions, providing insights into biodiversity and adaptation. Advances in technology are enabling deeper dives and more extensive studies. Protecting these fragile habitats is crucial as human activities pose increasing threats. Understanding the deep ocean not only broadens our knowledge of the planet but also reveals clues about life's origins and potential solutions to environmental challenges.",
+      "view": 1460,
+      "authorName": "Michael Lee",
+      "authorEmail": "michael.lee@example.com",
+      "authorPhoto": "https://example.com/images/michael-lee.jpg",
+      "postedDate": "2025-01-13",
+      "status": "normal",
+      "category":"science"
+    },
+    {
+     
+      "title": "The Future of Renewable Energy",
+      "image": "https://example.com/images/renewable-energy.jpg",
+      "publisher": "Green Planet Journal",
+      "description": "Renewable energy is the cornerstone of a sustainable future. Solar, wind, hydro, and geothermal power are becoming more accessible and affordable, offering clean alternatives to fossil fuels. Transitioning to renewables reduces greenhouse gas emissions, mitigates climate change, and ensures energy security. Governments worldwide are investing in infrastructure and incentives to accelerate this shift. Public awareness and participation play a vital role in promoting energy conservation and sustainable practices. By embracing renewable energy, we can create a cleaner, healthier environment and pave the way for economic growth and innovation.",
+      "view": 2200,
+      "authorName": "Olivia Davis",
+      "authorEmail": "olivia.davis@example.com",
+      "authorPhoto": "https://example.com/images/olivia-davis.jpg",
+      "postedDate": "2025-01-14",
+      "status": "normal",
+      "category":"science"
+    },
+    {
+      
+      "title": "The Impact of Social Media on Mental Health",
+      "image": "https://example.com/images/social-media-mental-health.jpg",
+      "publisher": "Psychology Today",
+      "description": "Social media has revolutionized communication but also raised concerns about its impact on mental health. While it offers opportunities for connection and self-expression, excessive use can lead to anxiety, depression, and reduced self-esteem. Cyberbullying and unrealistic comparisons are significant issues, especially among young users. Experts recommend setting boundaries and practicing mindfulness to foster a healthier relationship with technology. Parents and educators play a critical role in guiding teens toward balanced usage. As digital platforms continue to evolve, promoting awareness and responsible behavior is essential to mitigating the negative effects on mental well-being.",
+      "view": 2050,
+      "authorName": "Liam Miller",
+      "authorEmail": "liam.miller@example.com",
+      "authorPhoto": "https://example.com/images/liam-miller.jpg",
+      "postedDate": "2025-01-14",
+      "status": "premium",
+      "category":"social"
+    }
+  ]
+  
