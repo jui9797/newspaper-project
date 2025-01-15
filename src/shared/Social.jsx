@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import useAxiosPublic from '../hooks/useAxiosPublic';
 
-const Social = () => {
+const Social = ({from}) => {
     const {googleSignIn} = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
     const navigate =useNavigate()
@@ -23,7 +23,7 @@ const Social = () => {
         axiosPublic.post('/users', userInfo)
         .then(res=>{
             console.log(res.data)
-            navigate('/');
+            navigate(from);
         })
         
     })

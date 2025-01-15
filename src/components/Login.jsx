@@ -11,7 +11,7 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
-
+    console.log(from)
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -71,7 +71,7 @@ const Login = () => {
                                 <input  className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                       <Social></Social>
+                       <Social from={from}></Social>
                         <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
                     </div>
                 </div>

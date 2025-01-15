@@ -9,6 +9,8 @@ import MyProfile from "../components/MyProfile";
 import Dashboard from "../pages/dashboard/Dashboard";
 import AllUsers from "../pages/adminDashboard/AllUsers";
 import AllArticles from "../pages/allArticles/AllArticles";
+import Details from "../components/Details";
+import Private from "./private/Private";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
         {
             path:'/allArticles',
             element:<AllArticles></AllArticles>
+        },
+        {
+            path:'/details/:id',
+            element:<Private><Details></Details></Private>
         }
       ]
     },

@@ -2,12 +2,13 @@ import React from 'react';
 import useAxiosPublic from './useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 
-const useArticles = () => {
+const useArticles = (filters) => {
     const axiosPublic =useAxiosPublic()
     const {data: article = [], isPending: loading, refetch} =useQuery({
-        queryKey: ['article'], 
+        queryKey: ['article', filters], 
         queryFn: async() =>{
-            const res = await axiosPublic.get('/articles');
+            const params = new URLSearchParams(filters).toString()
+            const res = await axiosPublic.get(`/articles?${params}`);
             return res.data;
         }
     })
