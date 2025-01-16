@@ -11,6 +11,7 @@ import AllUsers from "../pages/adminDashboard/AllUsers";
 import AllArticles from "../pages/allArticles/AllArticles";
 import Details from "../components/Details";
 import Private from "./private/Private";
+import Premium from "../pages/premium/Premium";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/myProfile',
-            element:<MyProfile></MyProfile>
+            element:<Private><MyProfile></MyProfile></Private>
         },
         {
             path:'/allArticles',
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         {
             path:'/details/:id',
             element:<Private><Details></Details></Private>
+        },
+        {
+            path:'/premium',
+            element:<Private><Premium></Premium></Private>
         }
       ]
     },
