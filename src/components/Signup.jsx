@@ -31,7 +31,7 @@ const Signup = () => {
                     //   add user in database
                       axiosPublic.post('/users', userInfo)
                       .then(res=>{
-                        if(res.data.insertedId){
+                        if(res.data.insertedId || res.data.message === 'user already exist'){
                             reset()
                             Swal.fire({
                                 position: 'top-end',
@@ -43,7 +43,7 @@ const Signup = () => {
                             navigate('/');
                         }
                       })
-                      console.log('user profile info updated', userInfo)
+                    //   console.log('user profile info updated', userInfo)
                       
                 })
                 .catch(error => console.log(error))

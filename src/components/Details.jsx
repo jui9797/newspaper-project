@@ -9,7 +9,7 @@ const Details = () => {
     const {id} =useParams()
     // console.log(id)
     const axiosPublic = useAxiosPublic()
-    const hasIncremented = useRef(false);
+    // const hasIncremented = useRef(false);
     const {data: single = {}, isLoading: loading } =useQuery({
         queryKey: ['single', id], 
         queryFn: async() =>{

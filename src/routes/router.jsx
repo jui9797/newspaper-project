@@ -12,6 +12,10 @@ import AllArticles from "../pages/allArticles/AllArticles";
 import Details from "../components/Details";
 import Private from "./private/Private";
 import Premium from "../pages/premium/Premium";
+import AdminHome from "../pages/adminDashboard/AdminHome";
+import AdminAllArticles from "../pages/adminDashboard/AdminAllArticles";
+import AdminRoute from "./AdminRoute";
+import AddPublisher from "../pages/adminDashboard/AddPublisher";
 
 const router = createBrowserRouter([
     {
@@ -55,11 +59,25 @@ const router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        
+        element:<Private><AdminRoute><Dashboard></Dashboard></AdminRoute></Private>,
         children:[
             {
+                path:'home',
+                
+                element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
+            {
                 path:'users',
-                element:<AllUsers></AllUsers>
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: 'articles',
+                element:<AdminRoute><AdminAllArticles></AdminAllArticles></AdminRoute>
+            },
+            {
+                path: 'publishers',
+                element: <AdminRoute><AddPublisher></AddPublisher></AdminRoute>
             }
         ]
     }

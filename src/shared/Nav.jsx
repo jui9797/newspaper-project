@@ -5,16 +5,21 @@ import { MdLogout } from "react-icons/md";
 import registerImg from '../assets/user.png'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AuthContext } from '../provider/AuthProvider';
+import useAdmin from '../hooks/useAdmin';
 
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
+    const [isAdmin] = useAdmin()
 
     const links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/allArticles'>All Articles</NavLink>
         <NavLink to='/'>Add Articles</NavLink>
         <NavLink to='/subscription'>Subscription</NavLink>
-        <NavLink to='/dashboard'>Dashboard</NavLink>
+        {
+            isAdmin && <NavLink to='/dashboard/home'>Dashboard</NavLink>
+        }
+        
         <NavLink to='/'>My Articles</NavLink>
         <NavLink to='/premium'>Premium Articles</NavLink>
     </>
