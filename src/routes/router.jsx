@@ -16,6 +16,7 @@ import AdminHome from "../pages/adminDashboard/AdminHome";
 import AdminAllArticles from "../pages/adminDashboard/AdminAllArticles";
 import AdminRoute from "./AdminRoute";
 import AddPublisher from "../pages/adminDashboard/AddPublisher";
+import AddArticles from "../pages/addArticles/AddArticles";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         {
             path:'/premium',
             element:<Private><Premium></Premium></Private>
+        },
+        {
+            path:'/addArticles',
+            element:<Private><AddArticles></AddArticles></Private>
         }
       ]
     },

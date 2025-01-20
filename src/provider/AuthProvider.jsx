@@ -67,7 +67,7 @@ const AuthProvider = ({children}) => {
     }, [axiosPublic])
 
     const authInfo = {
-        createUser ,updateUserProfile , user,  loading, signIn, logOut, googleSignIn
+        createUser ,updateUserProfile , user, setUser,  loading, signIn, logOut, googleSignIn
     }
 
 

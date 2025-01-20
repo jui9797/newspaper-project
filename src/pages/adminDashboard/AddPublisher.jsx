@@ -14,67 +14,74 @@ const AddPublisher = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = async (data) => {
-        // console.log(data)
+        
         // image hosting api
         const imageFile = { image: data.image[0] }
+        
+       
+        
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         });
-        // console.log(res.data)
-        if(res.data.success){
-            const publisher ={
-                name: data.name,
-                image: res.data.data.display_url
-            }
-            const publisherRes = await axiosSecure.post('/publishers', publisher)
-            // console.log(publisherRes.data)
-            if(publisherRes.data.insertedId){
-                reset();
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${data.name} is added to the menu.`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
+        console.log(res.data)
+        const publisher ={}
+        if(res.data.success ){
+            publisher.name =data.name,
+            publisher.image =res.data.data.display_url
+       
+        
+        
+
         }
-        // console.log(res.data)
+        console.log({publisher})
+        const publisherRes = await axiosSecure.post('/publishers', publisher)
+        console.log(publisherRes)
+        if (publisherRes.data.insertedId) {
+            reset();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${data.name} is added to the publisher.`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+        }
+        console.log(res.data)
     }
+        return (
+            <div className='my-10'>
+                <h2 className='text-2xl lg:text-3xl text-center font-bold'>Add a new publisher</h2>
+                <div>
+                    <form onSubmit={handleSubmit(onSubmit)} className='p-2'>
+                        <div className="form-control w-full my-6">
+                            <label className="label">
+                                <span className="label-text">Publisher Name*</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Publisher Name"
+                                {...register('name', { required: true })}
+                                required
+                                className="input input-bordered w-full" />
+                        </div>
 
-    return (
-        <div className='my-10'>
-            <h2 className='text-2xl lg:text-3xl text-center font-bold'>Add a new publisher</h2>
-            <div>
-            <form onSubmit={handleSubmit(onSubmit)} className='p-2'>
-                    <div className="form-control w-full my-6">
-                        <label className="label">
-                            <span className="label-text">Publisher Name*</span>
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="Publisher Name"
-                            {...register('name', { required: true })}
-                            required
-                            className="input input-bordered w-full" />
-                    </div>
-                    
-                    
-                   
 
-                    <div className="form-control w-full my-6">
-                        <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
-                    </div>
 
-                    <button className="btn">
-                        Add Item <RiArticleFill />
-                    </button>
-                </form>
+
+                        <div className="form-control w-full my-6">
+                            <input {...register('image')}  type="file" className="file-input w-full max-w-xs" />
+                        </div>
+
+                        <button className="btn">
+                            Add Item <RiArticleFill />
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
-export default AddPublisher;
+    export default AddPublisher;

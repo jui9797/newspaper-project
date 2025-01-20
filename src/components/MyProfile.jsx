@@ -2,26 +2,67 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
+import { useSwiper } from 'swiper/react';
+import useAxiosPublic from '../hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 const MyProfile = () => {
     const { user, setUser } = useContext(AuthContext)
+    const axiosPublic = useAxiosPublic()
 
 
-    const handleUpdate=(e)=>{
+    const handleUpdate = (e) => {
         e.preventDefault()
-        
-        const name =e.target.name.value
-        const email =e.target.email.value
-        
-        const photo =e.target.photo.value
-        
-        
-      const updatedUser ={name, email, photo}
-      console.log(updatedUser)
-        
-        
-        
+
+        const name = e.target.name.value
+
+
+        const photo = e.target.photo.value
+        const updatedUser = {
+            name,
+            photo,
+        };
+
+        // update user info in database
+        if (user) {
+            updateProfile(auth.currentUser, {
+                displayName: name,
+                photoURL: photo
+            })
+                .then(() => {
+
+                    setUser({
+                        ...auth.currentUser,
+                        displayName: name,
+                        photoURL: photo
+                    })
+
+
+                })
+
+                .catch((error) => {
+                    console.log(error)
+
+                })
+
         }
+
+        // update user info in database
+        axiosPublic.patch(`/user/${user.email}`, updatedUser)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire({
+                    title: 'User profile updated.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+            })
+
+    }
 
     return (
         <div className='my-10'>
@@ -44,8 +85,8 @@ const MyProfile = () => {
                 {/* update form */}
                 <div>
                     <div className="">
-                    <div className="card bg-gray-100 w-full shrink-0  mx-auto">
-                        <h2 className='text-xl p-4 text-center'>Update Form</h2>
+                        <div className="card bg-gray-100 w-full shrink-0  mx-auto">
+                            <h2 className='text-xl p-4 text-center'>Update Form</h2>
                             <form onSubmit={handleUpdate} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -67,6 +108,7 @@ const MyProfile = () => {
                                     <input
                                         type="email"
                                         name="email"
+                                        readOnly
                                         defaultValue={user.email}
                                         placeholder="Your email"
                                         className="input input-bordered"
