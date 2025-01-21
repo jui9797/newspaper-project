@@ -49,6 +49,7 @@ const AdminArticleCard = ({ data, refetch }) => {
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
@@ -154,7 +155,13 @@ const AdminArticleCard = ({ data, refetch }) => {
                         :
                         <button onClick={() => handleApprove(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 '>Approve</button>
                     }
-                    <button onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Decline</button>
+                    {
+                        status === 'declined' ? 
+                        <button disabled onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Decline</button>
+                        :
+                        <button onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Decline</button>
+                    }
+                    
                     <button onClick={() => handleDelete(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Delete</button>
                     {
                         type === 'premium' ?

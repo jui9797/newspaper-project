@@ -20,7 +20,7 @@ const Nav = () => {
             isAdmin && <NavLink to='/dashboard/home'>Dashboard</NavLink>
         }
         
-        <NavLink to='/'>My Articles</NavLink>
+        <NavLink to='/myArticles'>My Articles</NavLink>
         <NavLink to='/premium'>Premium Articles</NavLink>
     </>
 
@@ -36,7 +36,7 @@ const Nav = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto sticky top-0 z-30'>
             <div className="navbar bg-blue-100">
                
 
@@ -58,7 +58,7 @@ const Nav = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow lora">
                                 {links}
                             </ul>
                         </div>
@@ -69,7 +69,7 @@ const Nav = () => {
                     </div>
 
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 space-x-3">
+                        <ul className="menu menu-horizontal px-1 space-x-3 lora">
                             {links}
                         </ul>
                     </div>

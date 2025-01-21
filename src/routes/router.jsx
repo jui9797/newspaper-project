@@ -17,6 +17,8 @@ import AdminAllArticles from "../pages/adminDashboard/AdminAllArticles";
 import AdminRoute from "./AdminRoute";
 import AddPublisher from "../pages/adminDashboard/AddPublisher";
 import AddArticles from "../pages/addArticles/AddArticles";
+import MyArticles from "../pages/myArticles/MyArticles";
+import UpdateArticle from "../components/UpdateArticle";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
         {
             path:'/addArticles',
             element:<Private><AddArticles></AddArticles></Private>
+        },
+        {
+            path: '/myArticles',
+            element:<MyArticles></MyArticles>
+        },
+        {
+            path:'/update/:id',
+            element: <UpdateArticle></UpdateArticle>
         }
       ]
     },

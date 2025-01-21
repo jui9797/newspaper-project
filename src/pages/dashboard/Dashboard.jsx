@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
     return (
-        <div className='m-4'>
+        <div className='m-4 bg-[#f7f9fb]'>
             {/* drawer */}
             <div className="drawer flex">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />

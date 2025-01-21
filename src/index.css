@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .active{
-    color: blue;
+    color:#346a8e;
     font-weight: bold;
 }
 .lora{
