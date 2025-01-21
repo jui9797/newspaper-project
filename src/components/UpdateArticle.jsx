@@ -33,7 +33,7 @@ const UpdateArticle = () => {
         const formData = new FormData();
         formData.append("image", imageFile);
 
-        const imageResponse = await axiosPublic.post(image_hosting_api, formData);
+        // const imageResponse = await axiosPublic.post(image_hosting_api, formData);
         // console.log(imageResponse.data.success)
         // console.log(image_hosting_api)
         try {
