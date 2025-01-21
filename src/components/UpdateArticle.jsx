@@ -4,7 +4,7 @@ import useAxiosPublic from '../hooks/useAxiosPublic';
 import usePublisher from '../hooks/usePublisher';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useArticleById from '../hooks/useArticleById';
 
 
@@ -17,6 +17,7 @@ const UpdateArticle = () => {
     const { id } = useParams()
     // console.log(id)
     const [article] = useArticleById(id)
+    const navigate = useNavigate()
     // console.log(article)
     const { _id, title, publisher, authorName, authorEmail, authorPhoto, description, view, type, tag, image, postedDate, status } = article || {}
     const axiosPublic = useAxiosPublic();
@@ -82,7 +83,7 @@ const UpdateArticle = () => {
             // Submit article data to  backend
             // Assuming `axiosSecure` is  API client for secure requests
             const response = await axiosPublic.patch(`/article/update/${_id}`, articleData);
-
+            console.log(response.data)
             if (response.data.modifiedCount > 0) {
                 reset();
                 Swal.fire({
@@ -92,6 +93,7 @@ const UpdateArticle = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                navigate('/myArticles')
             }
         } catch (error) {
             console.error('Error uploading images or submitting article:', error);
