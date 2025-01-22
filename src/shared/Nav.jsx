@@ -37,7 +37,7 @@ const Nav = () => {
 
     return (
         <div className='w-11/12 mx-auto sticky top-0 z-30'>
-            <div className="navbar bg-blue-100">
+            <div className="navbar bg-blue-400 text-white">
                
 
                     <div className="navbar-start">
@@ -65,7 +65,7 @@ const Nav = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className=" hidden lg:flex flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-50">
                                         <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
                                     </svg>
-                        <a className="btn btn-ghost text-xl lg:text-2xl lora">TRENDIFY</a>
+                        <a className=" text-xl lg:text-2xl lora">TRENDIFY</a>
                     </div>
 
                     <div className="navbar-center hidden lg:flex">
@@ -81,13 +81,13 @@ const Nav = () => {
                         user ? <>
                             <div className='flex gap-2'>
                                 <Link to='/myProfile'><img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="profile" /></Link>
-                                <button onClick={handleLogout} className='btn'><MdLogout /></button>
+                                <button onClick={handleLogout} className='btn text-blue-500'><MdLogout /></button>
                             </div>
                         </> :
                             <>
                                 <div className='flex gap-2'>
-                                    <button className='btn'><Link to='/signup'><img className='w-6 h-6' src={registerImg} alt="" /></Link></button>
-                                    <button className='btn'><Link to='/login'><MdLogin /></Link></button>
+                                    <button className='btn text-blue-500'><Link to='/signup'><img className='w-6 h-6' src={registerImg} alt="" /></Link></button>
+                                    <button className='btn text-blue-500'><Link to='/login'><MdLogin /></Link></button>
                                 </div>
                             </>
                     }

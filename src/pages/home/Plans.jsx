@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Plans = () => {
     return (
 
-        <div className='my-10 lg:my-20 border-2'>
+        <div className='my-10 lg:my-20'>
             <SectionTitle heading='our plans' subHeading='exclusive'></SectionTitle>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 p-4'>
@@ -75,7 +75,7 @@ const Plans = () => {
                     </div>
                     <div className=''>
                         <button className='btn bg-blue-300 w-full'><Link to='/subscription'>Get Premium family</Link></button>
-                        <p><small>For up to 6 family residing at the same address Tarms apply</small></p>
+                        <p><small>For family Tarms should be applied</small></p>
                     </div>
                 </div>
             </div>

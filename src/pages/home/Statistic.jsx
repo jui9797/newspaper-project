@@ -9,7 +9,7 @@ const Statistic = () => {
 
 
     return (
-        <div className='my-10 lg:my-20 border-2'>
+        <div className='my-10 lg:my-20'>
             <SectionTitle heading='statistics' subHeading='statistics says'></SectionTitle>
 
             {/* stats */}

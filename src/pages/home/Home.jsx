@@ -5,6 +5,7 @@ import Statistic from './Statistic';
 import Plans from './Plans';
 
 import HelmetTitle from '../../shared/HelmetTitle';
+import Gallery from './Gallery';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <div className='my-10 lg:my-20'>
             <Plans></Plans>
             </div>
+            <Gallery></Gallery>
         </div>
     );
 };

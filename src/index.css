@@ -7,8 +7,8 @@
 @tailwind utilities;
 
 .active{
-    color:#346a8e;
-    font-weight: bold;
+    color:black;
+    font-weight: bolder;
 }
 .lora{
     font-family: "Lora", serif;
