@@ -2,11 +2,13 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../hooks/useAdmin';
 import { GiHamburgerMenu } from "react-icons/gi";
+import HelmetTitle from '../../shared/HelmetTitle';
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
     return (
         <div className='m-4 bg-[#f7f9fb]'>
+            <HelmetTitle title="Dashboard || Trendify"></HelmetTitle>
             {/* drawer */}
             <div className="drawer flex">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />

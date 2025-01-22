@@ -19,10 +19,10 @@ const UpdateArticle = () => {
     const [article] = useArticleById(id)
     const navigate = useNavigate()
     // console.log(article)
-    const { _id, title, publisher, authorName, authorEmail, authorPhoto, description, view, type, tag, image, postedDate, status } = article || {}
+    const { _id, title, publisher, authorName, authorEmail,  description, view, type,  postedDate, status } = article || {}
     const axiosPublic = useAxiosPublic();
     const [publishers] = usePublisher();
-    const { register, handleSubmit, reset, setValue } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     
 
@@ -83,7 +83,7 @@ const UpdateArticle = () => {
             // Submit article data to  backend
             // Assuming `axiosSecure` is  API client for secure requests
             const response = await axiosPublic.patch(`/article/update/${_id}`, articleData);
-            console.log(response.data)
+            // console.log(response.data)
             if (response.data.modifiedCount > 0) {
                 reset();
                 Swal.fire({
@@ -96,7 +96,7 @@ const UpdateArticle = () => {
                 navigate('/myArticles')
             }
         } catch (error) {
-            console.error('Error uploading images or submitting article:', error);
+            // console.error('Error uploading images or submitting article:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -208,7 +208,9 @@ const UpdateArticle = () => {
                             <label className="label">
                                 <span className="label-text">Tag</span>
                             </label>
-                            <select className="select select-bordered w-full ">
+                            <select
+                                {...register('tag', { required: true })}
+                             className="select select-bordered w-full ">
                                 <option disabled>Select a tag</option>
                                 <option>science</option>
                                 <option>health</option>

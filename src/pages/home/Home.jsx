@@ -4,9 +4,12 @@ import Publisers from './Publisers';
 import Statistic from './Statistic';
 import Plans from './Plans';
 
+import HelmetTitle from '../../shared/HelmetTitle';
+
 const Home = () => {
     return (
         <div>
+            <HelmetTitle title="Home || Trendify"></HelmetTitle>
             <Banner></Banner>
             <div className='my-10 lg:my-20'>
             <Publisers></Publisers>

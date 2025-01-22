@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/myArticles',
-            element:<MyArticles></MyArticles>
+            element:<Private><MyArticles></MyArticles></Private>
         },
         {
             path:'/update/:id',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useArticles from '../../hooks/useArticles';
 import NormalCard from '../../components/NormalCard';
 import PremiumCard from '../../components/premiumCard';
+import HelmetTitle from '../../shared/HelmetTitle';
 
 const AllArticles = () => {
     const [filters, setFilters] = useState({
@@ -24,6 +25,7 @@ const AllArticles = () => {
 
     return (
         <div className='my-10'>
+            <HelmetTitle title="All Article || Trendify"></HelmetTitle>
             <h2 className='text-3xl mb-4'>Articles are here</h2>
             <div className='flex gap-4 flex-wrap'>
                 {/* filter by publisher */}

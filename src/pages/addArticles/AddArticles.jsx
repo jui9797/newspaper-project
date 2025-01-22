@@ -4,6 +4,8 @@ import usePublisher from '../../hooks/usePublisher';
 import Select from 'react-select';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import HelmetTitle from '../../shared/HelmetTitle';
 
 
 
@@ -13,6 +15,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const AddArticles = () => {
     const axiosPublic = useAxiosPublic();
     const [publishers] = usePublisher();
+    const navigate = useNavigate()
     const { register, handleSubmit, reset, setValue } = useForm();
 
     const options = [
@@ -91,6 +94,7 @@ const AddArticles = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                navigate('/myArticles')
             }
         } catch (error) {
             console.error('Error uploading images or submitting article:', error);
@@ -105,6 +109,7 @@ const AddArticles = () => {
 
     return (
         <div className='my-10'>
+            <HelmetTitle title="Add Article || Trendify"></HelmetTitle>
             <h2 className='text-2xl'>Add an article</h2>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='border-2 p-2'>

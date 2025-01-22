@@ -5,6 +5,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import HelmetTitle from '../../shared/HelmetTitle';
 
 const MyArticles = () => {
     const { user } = useContext(AuthContext)
@@ -57,14 +58,15 @@ const handleDelete = (id) => {
 
     return (
         <div className='my-10'>
-            <h2 className='text-3xl text-center'>My Articles: {article.length}</h2>
+            <HelmetTitle title="My Articles || Trendify"></HelmetTitle>
+            <h2 className='text-3xl text-center lora font-bold'>My Articles: {article.length}</h2>
             {loading && <p>Loading..</p>}
             {/* article table */}
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className='bg-blue-100'>
                             <tr>
                                 <th></th>
                                 <th>Title</th>
@@ -81,7 +83,7 @@ const handleDelete = (id) => {
                                 article.map((item, index) =>
                                     <tr key={index}>
                                         <th>{index + 1}</th>
-                                        <td>{item.title}</td>
+                                        <td className='font-bold lora'>{item.title}</td>
                                         <td>
                                             {item.status === 'declined' ? (
                                                 <>
@@ -107,21 +109,23 @@ const handleDelete = (id) => {
                                                 </>
 
                                             ) : (
-                                                <p>{item.status}</p>
+                                                <p className={item.status === "approved" ? "text-blue-500" : item.status === "pending" ? "text-yellow-500" : "text-red-500"}>
+                                                    {item.status}
+                                                </p>
                                             )}
                                         </td>
                                         <td>
-                                            <button className='btn btn-xs'><Link to={`/details/${item._id}`}>Details</Link></button>
+                                            <button className='btn btn-xs bg-blue-500 text-white'><Link to={`/details/${item._id}`}>Details</Link></button>
                                         </td>
 
                                         <td>
                                             {item.type === 'premium' ? 'Yes' : 'No'}
                                         </td>
                                         <td>
-                                            <button className='btn btn-xs'><Link to={`/update/${item._id}`}>update</Link></button>
+                                            <button className='btn btn-xs bg-yellow-300'><Link to={`/update/${item._id}`}>update</Link></button>
                                         </td>
                                         <td>
-                                            <button onClick={() => handleDelete(item._id)} className='btn btn-xs'>delete</button>
+                                            <button onClick={() => handleDelete(item._id)} className='btn btn-xs bg-red-500 text-white'>delete</button>
                                         </td>
                                     </tr>
                                 )

@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         
-            <footer className="py-6 dark:bg-gray-100 dark:text-gray-900 border-2 w-11/12 mx-auto">
+            <footer className="py-6 dark:bg-gray-100 dark:text-gray-900 border-2 w-11/12 mx-auto bg-blue-100">
                 <div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
                     <div className="grid grid-cols-12">
                         <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
@@ -16,43 +16,22 @@ const Footer = () => {
                                 <span className="self-center text-2xl font-semibold lora">TRENDIFY</span>
                             </a>
                         </div>
+                        
                         <div className="col-span-6 text-center md:text-left md:col-span-3">
-                            <p className="pb-1 text-lg font-medium">Category</p>
+                            <p className="pb-1 text-lg font-medium">Pages</p>
                             <ul>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+                                    <a rel="noopener noreferrer" href="/allArticles" className="hover:dark:text-violet-600">All Articles</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+                                    <a rel="noopener noreferrer" href="/addArticles" className="hover:dark:text-violet-600">Add Article</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+                                    <a rel="noopener noreferrer" href="/subscription" className="hover:dark:text-violet-600">Subscription</a>
                                 </li>
+                                
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-span-6 text-center md:text-left md:col-span-3">
-                            <p className="pb-1 text-lg font-medium">Category</p>
-                            <ul>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+                                    <a rel="noopener noreferrer" href="/myProfile" className="hover:dark:text-violet-600">Profile</a>
                                 </li>
                             </ul>
                         </div>
