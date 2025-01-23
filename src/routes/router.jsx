@@ -19,6 +19,7 @@ import AddPublisher from "../pages/adminDashboard/AddPublisher";
 import AddArticles from "../pages/addArticles/AddArticles";
 import MyArticles from "../pages/myArticles/MyArticles";
 import UpdateArticle from "../components/UpdateArticle";
+import Payment from "../pages/subscription/Payment";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
             path:'/subscription',
             element:<Subscription></Subscription>
         },
+        {
+            path: '/subscription/payment/:price',
+            element: <Payment></Payment>
+        },
+        
         {
             path:'/myProfile',
             element:<Private><MyProfile></MyProfile></Private>

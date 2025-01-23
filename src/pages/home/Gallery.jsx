@@ -25,7 +25,7 @@ const Gallery = () => {
                 : index === 3
                 ? 'lg:col-span-2 transition  hover:scale-105'
                 : index === 4
-                ? 'lg:col-span-2 lg:row-span-2 lg:h-[253px] transition  hover:scale-105'
+                ? 'lg:col-span-2 lg:row-span-2 md:h-[147px] lg:h-[194px] transition  hover:scale-105'
                 : index === 5
                 ? 'lg:col-span-2 transition  hover:scale-105'
                 : 'transition  hover:scale-105'
