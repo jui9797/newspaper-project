@@ -6,6 +6,7 @@ import Plans from './Plans';
 
 import HelmetTitle from '../../shared/HelmetTitle';
 import Gallery from './Gallery';
+import Faq from './Faq';
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <Plans></Plans>
             </div>
             <Gallery></Gallery>
+            <Faq></Faq>
         </div>
     );
 };

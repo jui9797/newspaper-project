@@ -26,10 +26,10 @@ const Plans = () => {
                         </ul>
                     </div>
                    <div>
-                   <button className='btn w-full bg-pink-300'>
+                   <button className='btn btn-xs  md:btn-md lg:btn-md w-full bg-pink-300'>
                         <Link to='/subscription'>Try free for 1 month</Link>
                     </button>
-                    <p><small>Free for 1 month, then $10.99 per month after. Offer only available if you have not tried premium before. Terms apply. </small></p>
+                    <p><small>For family Tarms should be applied. </small></p>
                    </div>
                     
                 </div>
@@ -51,8 +51,8 @@ const Plans = () => {
                         </ul>
                     </div>
                     <div className=''>
-                        <button className='btn w-full bg-amber-300'><Link to='/subscription'>Get Premium Due</Link></button>
-                        <p><small>For couples who reside at the same address. Terms apply</small></p>
+                        <button className='btn btn-xs  md:btn-md lg:btn-md w-full bg-amber-300'><Link to='/subscription'>Get Premium Due</Link></button>
+                        <p><small>For family Tarms should be applied.</small></p>
                     </div>
                 </div>
                 {/* card-3 */}
@@ -74,7 +74,7 @@ const Plans = () => {
                         </ul>
                     </div>
                     <div className=''>
-                        <button className='btn bg-blue-300 w-full'><Link to='/subscription'>Get Premium family</Link></button>
+                        <button className='btn btn-xs  md:btn-md lg:btn-md bg-blue-300 w-full'><Link to='/subscription'>Get Premium family</Link></button>
                         <p><small>For family Tarms should be applied</small></p>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const Publisers = () => {
             <div className='flex  gap-12 lora mt-4 lg:mt-8'>
                 {
                     publishers.map(item=>
-                        <div key={item._id} className='bg-white hover:bg-[#488fbf] hover:text-white flex flex-col justify-center items-center  p-4 border-none text-xl text-center'>
+                        <div key={item._id} className='bg-white hover:bg-blue-400 hover:text-white flex flex-col justify-center items-center  p-4 border-none text-xl text-center'>
                             <img className='w-32 h-20' src={item.image} alt="" />
                  </div>
                     )
