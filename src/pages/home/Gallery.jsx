@@ -5,7 +5,7 @@ import useArticles from '../../hooks/useArticles';
 const Gallery = () => {
 
     const articles = useArticles()
-    console.log(articles[0])
+    // console.log(articles[0])
 
 
     return (

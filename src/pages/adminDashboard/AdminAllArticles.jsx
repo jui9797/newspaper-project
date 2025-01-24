@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import useArticles from '../../hooks/useArticles';
+
 import AdminArticleCard from '../../components/AdminArticleCard';
 import { Pagination, Stack } from '@mui/material';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const AdminAllArticles = () => {
-    // const [article, loading, refetch] = useArticles()
+    
     const axiosSecure = useAxiosSecure()
     // console.log(article)
     const {loading} = useContext(AuthContext)

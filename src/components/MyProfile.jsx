@@ -5,10 +5,24 @@ import auth from '../firebase/firebase.config';
 import { useSwiper } from 'swiper/react';
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
+import { useQuery } from '@tanstack/react-query';
 
 const MyProfile = () => {
     const { user, setUser } = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
+
+    
+    const {data: users = []} =useQuery({
+        queryKey: ['users'], 
+        queryFn: async() =>{
+            
+            const res = await axiosPublic.get('/allUsers');
+            return res.data;
+        }
+    })
+    console.log(users)
+    const displayUser = users.find(data => data.email === user?.email);
+    console.log(displayUser)
 
 
     const handleUpdate = (e) => {
@@ -65,7 +79,7 @@ const MyProfile = () => {
     }
 
     return (
-        <div className='my-10'>
+        <div className='my-10 lora'>
             <h2 className='text-3xl font-bold'>Welcome back .... {user.displayName}</h2>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                 {/* profile card */}
@@ -73,7 +87,7 @@ const MyProfile = () => {
                     <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 border-2">
                         <img src={user.photoURL} alt="" className=" lg:w-2/3 mx-auto rounded-t-md h-60 lg:h-72 dark:bg-gray-500 p-4" />
                         <div className="text-center p-3 space-y-2 relative">
-                            <div className='p-2 lg:p-3 w-16 rounded-lg bg-black text-white absolute left-[82px] bottom-24 lg:left-48 lg:bottom-24'>Role</div>
+                            <div className='p-2 lg:p-3 w-16 rounded-lg bg-blue-400 text-white absolute left-[82px] bottom-24 lg:left-48 lg:bottom-24'>{displayUser.role}</div>
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-semibold tracking-wide">{user.displayName}</h2>
                                 <p className="dark:text-gray-800">Email: {user.email}</p>
@@ -132,7 +146,7 @@ const MyProfile = () => {
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn bg-gradient-to-b from-gray-300 to-purple-700 border-none text-black">Update</button>
+                                    <button className="btn bg-blue-400 border-none text-white">Update</button>
                                 </div>
                             </form>
                         </div>

@@ -24,7 +24,7 @@ const Details = () => {
 // increment view count(way-1)
 
 
-// const [count, setCount] =useState('')
+
 useEffect(()=>{
    axiosPublic.patch(`/articles/${id}`)
    .then(res =>{
@@ -40,7 +40,7 @@ useEffect(()=>{
     return (
         <div className='my-10'>
             {
-                loading? <p>Loading...</p> :
+                loading? <span className="loading loading-dots loading-lg"></span> :
                 <>
                 <div>
                  <div className='h-[200px] md:h-[300px] lg:h-[500px] p-2'>

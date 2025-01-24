@@ -41,11 +41,11 @@ const router = createBrowserRouter([
         },
         {
             path:'/subscription',
-            element:<Subscription></Subscription>
+            element:<Private><Subscription></Subscription></Private>
         },
         {
             path: '/subscription/payment/:price',
-            element: <Payment></Payment>
+            element: <Private><Payment></Payment></Private>
         },
         
         {

@@ -8,7 +8,7 @@ const Private = ({ children }) => {
     const location = useLocation();
 
     if(loading){
-        return <p>Loading...</p>
+        return <span className="loading loading-dots loading-lg"></span>
     }
 
     if (user) {

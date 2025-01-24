@@ -9,7 +9,7 @@ const AllArticles = () => {
    publisher:'', tag:'', title:''
     })
 
-    const [article, loading, refetch] = useArticles(filters)
+    const [article, loading] = useArticles(filters)
 
   const handleFilterChange =(e)=>{
     setFilters((prev)=>({
@@ -76,7 +76,7 @@ const AllArticles = () => {
             approvedArticles.length === 0? <p className='text-4xl text-center my-10'>No Article ...</p> : ''
            }
            {
-            loading? <p>Loading...</p>: ''
+            loading? <span className="loading loading-dots loading-lg"></span>: ''
            }
 
             {/* article grid */}

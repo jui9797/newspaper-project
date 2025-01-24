@@ -36,8 +36,8 @@ const AddArticles = () => {
             formData.append("image", imageFile);
 
             const imageResponse = await axiosPublic.post(image_hosting_api, formData);
-            console.log(imageResponse.data.success)
-            console.log(image_hosting_api)
+            // console.log(imageResponse.data.success)
+            // console.log(image_hosting_api)
         try {
             // Image upload function
             const uploadImage = async (imageFile) => {
@@ -49,7 +49,7 @@ const AddArticles = () => {
                 });
 
                 if (response.data.success) {
-                    return response.data.data.display_url; // Return the image URL
+                    return response.data.data.display_url; 
                 } else {
                     throw new Error('Image upload failed');
                 }
@@ -81,8 +81,7 @@ const AddArticles = () => {
                 
             };
 
-            // Submit article data to your backend
-            // Assuming `axiosSecure` is your API client for secure requests
+            
             const response = await axiosPublic.post('/articles', articleData);
 
             if (response.data.insertedId) {
@@ -97,7 +96,7 @@ const AddArticles = () => {
                 navigate('/myArticles')
             }
         } catch (error) {
-            console.error('Error uploading images or submitting article:', error);
+            // console.error('Error uploading images or submitting article:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

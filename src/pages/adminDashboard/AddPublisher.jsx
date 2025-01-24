@@ -25,7 +25,7 @@ const AddPublisher = () => {
                 'content-type': 'multipart/form-data'
             }
         });
-        console.log(res.data)
+        // console.log(res.data)
         const publisher ={}
         if(res.data.success ){
             publisher.name =data.name,
@@ -35,9 +35,9 @@ const AddPublisher = () => {
         
 
         }
-        console.log({publisher})
+        // console.log({publisher})
         const publisherRes = await axiosSecure.post('/publishers', publisher)
-        console.log(publisherRes)
+        // console.log(publisherRes)
         if (publisherRes.data.insertedId) {
             reset();
             Swal.fire({
@@ -49,7 +49,7 @@ const AddPublisher = () => {
             });
 
         }
-        console.log(res.data)
+        // console.log(res.data)
     }
         return (
             <div className='my-10 lora'>

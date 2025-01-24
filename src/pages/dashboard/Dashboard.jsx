@@ -3,6 +3,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../hooks/useAdmin';
 import { GiHamburgerMenu } from "react-icons/gi";
 import HelmetTitle from '../../shared/HelmetTitle';
+import { FaHome } from "react-icons/fa";
+import { IoHomeSharp } from "react-icons/io5";
+import { FaUsers } from "react-icons/fa";
+import { RiArticleFill } from "react-icons/ri";
+import { FaUserAlt } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
@@ -25,33 +31,20 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu bg-base-200 text-base-content min-h-full w-64 p-4">
+                    <ul className="menu bg-blue-200 text-base-content min-h-full w-64 p-4">
                         {/* Sidebar content here */}
-                        <li><NavLink to='/dashboard/home'>Admin Home</NavLink></li>
-                        <li><NavLink to='/dashboard/users'>All Users</NavLink></li>
-                        <li><NavLink to='/dashboard/articles'>All Articles</NavLink></li>
-                        <li><NavLink to='/dashboard/publishers'>Add Publishers</NavLink></li>
-                        <li><NavLink to='/'>Back To Home</NavLink></li>
+                        <li><NavLink to='/dashboard/home'><FaHome /> Admin Home</NavLink></li>
+                        <li><NavLink to='/dashboard/users'><FaUsers /> All Users</NavLink></li>
+                        <li><NavLink to='/dashboard/articles'><RiArticleFill /> All Articles</NavLink></li>
+                        <li><NavLink to='/dashboard/publishers'><FaUserAlt /> Add Publishers</NavLink></li>
+                        <li><NavLink to='/'><IoHomeSharp />Back To Home</NavLink></li>
                     </ul>
                 </div>
             </div>
 
 
 
-            {/* <div className='lg:w-64 min-h-screen bg-pink-300 p-4'>
-                <h2 className='uppercase mb-4'>Trendify</h2>
-                <ul>
-                    <li><NavLink to='/dashboard/home'>Admin Home</NavLink></li>
-                    <li><NavLink to='/dashboard/users'>All Users</NavLink></li>
-                    <li><NavLink to='/dashboard/articles'>All Articles</NavLink></li>
-                    <li><NavLink to='/dashboard/publishers'>All Publishers</NavLink></li>
-                </ul>
-                <hr />
-                <ul>
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/articles'>All articles</NavLink></li>
-                </ul>
-            </div> */}
+            
 
 
 

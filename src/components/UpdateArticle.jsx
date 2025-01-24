@@ -80,8 +80,7 @@ const UpdateArticle = () => {
 
             };
 
-            // Submit article data to  backend
-            // Assuming `axiosSecure` is  API client for secure requests
+            
             const response = await axiosPublic.patch(`/article/update/${_id}`, articleData);
             // console.log(response.data)
             if (response.data.modifiedCount > 0) {
