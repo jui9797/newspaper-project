@@ -80,7 +80,7 @@ const handleOnSubmit= async(e) =>{
 
     return (
         <div>
-            <form onSubmit={handleOnSubmit}>
+            <form onSubmit={handleOnSubmit} className='border-2 border-blue-400 p-2 rounded-lg'>
                 <CardElement options={{
                     style: {
                         base: {
@@ -95,7 +95,7 @@ const handleOnSubmit= async(e) =>{
                         },
                     },
                 }}></CardElement>
-                <button className="btn btn-sm btn-primary my-4" type="submit" disabled={!stripe || !clientSecret}>
+                <button className="btn btn-sm bg-blue-400 text-white px-5 my-4" type="submit" disabled={!stripe || !clientSecret}>
                 Pay
             </button>
             <p className='text-red-500'>{error}</p>

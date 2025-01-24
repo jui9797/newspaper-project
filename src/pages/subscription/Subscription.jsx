@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { format, addMinutes, addDays } from "date-fns";
+import {  addMinutes, addDays } from "date-fns";
 
 const SubscriptionPage = () => {
   const [selectedPeriod, setSelectedPeriod] = useState(1);
@@ -25,10 +25,7 @@ const SubscriptionPage = () => {
       premiumEnd = addDays(new Date(), selectedOption.value);
     }
 
-    // Update user status (Assume updateUserPremiumStatus is a function to update user data)
-    // updateUserPremiumStatus(user.id, {
-    //   premiumTaken: format(premiumEnd, "yyyy-MM-dd'T'HH:mm:ss")
-    // });
+    
 
     // Navigate to payment page
     navigate(`/subscription/payment/${selectedOption.price}`, { state: { amount: selectedOption.price } });
@@ -36,7 +33,7 @@ const SubscriptionPage = () => {
 
   return (
     <div className="subscription-page bg-gray-100 min-h-screen">
-      <div className="banner bg-blue-600 text-white text-center py-10">
+      <div className="banner bg-blue-400 text-white text-center py-10">
         <h1 className="text-4xl font-bold">Get Premium Access Now!</h1>
         <p className="mt-4 text-lg">Choose a subscription plan and enjoy exclusive benefits.</p>
       </div>
@@ -64,7 +61,7 @@ const SubscriptionPage = () => {
 
         <button
           onClick={handleSubscription}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="w-full bg-blue-400 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
         >
           Take Subscription
         </button>

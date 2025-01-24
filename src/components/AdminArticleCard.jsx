@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 
 
 
-const AdminArticleCard = ({ data, refetch }) => {
+const AdminArticleCard = ({ data }) => {
     const { _id, image, title, authorName, authorEmail, authorPhoto, postedDate, status, publisher, type } = data || {}
     const axiosSecure = useAxiosSecure()
 
@@ -29,7 +29,7 @@ const AdminArticleCard = ({ data, refetch }) => {
                         timer: 1500
                     });
                 }
-                refetch()
+               
             })
             .catch(err => console.log(err))
 
@@ -49,7 +49,7 @@ const AdminArticleCard = ({ data, refetch }) => {
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
-                    refetch();
+                   
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
@@ -83,7 +83,7 @@ const AdminArticleCard = ({ data, refetch }) => {
                 // console.log(res.data);
                 if (res.data.deletedCount > 0) {
                     // refetch to update the ui
-                    refetch();
+                    
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -114,7 +114,7 @@ const AdminArticleCard = ({ data, refetch }) => {
                         timer: 1500
                     });
                 }
-                refetch()
+                
             })
             .catch(err => console.log(err))
 
@@ -151,23 +151,23 @@ const AdminArticleCard = ({ data, refetch }) => {
                 <div className='flex flex-wrap gap-2'>
                     {
                         status === 'approved' ?
-                        <button disabled onClick={() => handleApprove(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 '>Approve</button>
+                        <button disabled onClick={() => handleApprove(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-green-400'>Approve</button>
                         :
-                        <button onClick={() => handleApprove(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 '>Approve</button>
+                        <button onClick={() => handleApprove(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-green-400'>Approve</button>
                     }
                     {
                         status === 'declined' ? 
-                        <button disabled onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Decline</button>
+                        <button disabled onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-orange-400'>Decline</button>
                         :
-                        <button onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Decline</button>
+                        <button onClick={() => handleDecline(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-orange-400'>Decline</button>
                     }
                     
-                    <button onClick={() => handleDelete(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Delete</button>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-red-400'>Delete</button>
                     {
                         type === 'premium' ?
-                        <button disabled onClick={() => handlePremium(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Premium</button>
+                        <button disabled onClick={() => handlePremium(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-blue-300'>Premium</button>
                         :
-                        <button onClick={() => handlePremium(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2'>Premium</button>
+                        <button onClick={() => handlePremium(_id)} className='btn btn-xs sm:btn-sm md:px-2 md:py-2 bg-blue-400'>Premium</button>
                     }
                 </div>
                 {/* modal */}

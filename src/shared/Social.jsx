@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-import { FaGoogle } from 'react-icons/fa';
+import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
 
@@ -51,8 +51,8 @@ const Social = ({ from }) => {
         <div className="p-4">
             <div className="divider"></div>
             <div>
-                <button onClick={handleGoogleSignIn} className="btn bg-slate-400 w-full">
-                    <FaGoogle className="mr-2"></FaGoogle>
+                <button onClick={handleGoogleSignIn} className="btn bg-slate-200 text-blue-600 w-full">
+                    <span className='text-2xl'><FcGoogle className="mr-2"></FcGoogle></span>
                     Google
                 </button>
             </div>

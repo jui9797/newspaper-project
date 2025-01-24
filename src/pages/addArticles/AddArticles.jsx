@@ -110,7 +110,7 @@ const AddArticles = () => {
     return (
         <div className='my-10'>
             <HelmetTitle title="Add Article || Trendify"></HelmetTitle>
-            <h2 className='text-2xl'>Add an article</h2>
+            <h2 className='text-2xl lora font-bold'>Add an article</h2>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='border-2 p-2'>
 
@@ -236,7 +236,7 @@ const AddArticles = () => {
                             <label className="label">
                                 <span className="label-text">Author Photo</span>
                             </label>
-                            <input {...register('authorPhoto', { required: true })} name='authorPhoto' type="file" className="file-input w-full max-w-xs" />
+                            <input {...register('authorPhoto', { required: true })} name='authorPhoto' type="file" className="file-input w-full max-w-xs bg-blue-200" />
                         </div>
 
                         {/* image */}
@@ -244,7 +244,7 @@ const AddArticles = () => {
                             <label className="label">
                                 <span className="label-text">Article Image</span>
                             </label>
-                            <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
+                            <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs bg-blue-200" />
                         </div>
                         {/* view */}
                         <div className="form-control w-full my-4 ">

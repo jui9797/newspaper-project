@@ -52,8 +52,8 @@ const AddPublisher = () => {
         console.log(res.data)
     }
         return (
-            <div className='my-10'>
-                <h2 className='text-2xl lg:text-3xl text-center font-bold'>Add a new publisher</h2>
+            <div className='my-10 lora'>
+                <h2 className='text-2xl lg:text-3xl text-center font-bold lora'>Add a new publisher</h2>
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)} className='p-2'>
                         <div className="form-control w-full my-6">
@@ -75,7 +75,7 @@ const AddPublisher = () => {
                             <input {...register('image')}  type="file" className="file-input w-full max-w-xs" />
                         </div>
 
-                        <button className="btn">
+                        <button className="btn bg-blue-400 text-white">
                             Add Item <RiArticleFill />
                         </button>
                     </form>

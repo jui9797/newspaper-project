@@ -16,8 +16,8 @@ const Dashboard = () => {
                     {/* Page content here */}
                     <div className='flex gap-2'>
                     
-                    <label htmlFor="my-drawer" className="btn bg-gray-700 text-white drawer-button"><GiHamburgerMenu /></label>
-                    <h2 className='text-xl lg:text-3xl'>TRENDIFY</h2>
+                    <label htmlFor="my-drawer" className="btn bg-blue-400 my-4 text-white drawer-button"><GiHamburgerMenu /></label>
+                    <h2 className='text-xl lg:text-3xl my-4 font-bold lora'>TRENDIFY</h2>
                     </div>
                     <div className='border-2 w-full'>
                     <Outlet></Outlet>

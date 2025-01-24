@@ -16,7 +16,7 @@ const NormalCard = ({ data }) => {
                     <p>type: {data.type}</p>
                     <p>Description: {`${data.description.substring(0, 40)}...`}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary"><Link to={`/details/${data._id}`}>Details</Link></button>
+                        <button className="btn bg-blue-400 text-white border-none"><Link to={`/details/${data._id}`}>Details</Link></button>
                     </div>
                 </div>
             </div>

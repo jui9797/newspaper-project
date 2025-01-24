@@ -56,7 +56,7 @@ const AllUsers = () => {
 
   return (
     <div>
-      <h2 className="text-2xl lg:text-3xl font-bold text-center">
+      <h2 className="text-2xl lg:text-3xl font-bold text-center lora my-4">
         All users: {allUsers}
       </h2>
       {/* Table */}
@@ -105,7 +105,7 @@ const AllUsers = () => {
         </div>
         {/* Pagination */}
         <div>
-          <Stack spacing={2} className="mt-4">
+          <Stack spacing={2} className="mt-4 lg:mt-8 ml-4 items-center">
             <Pagination
               count={totalPages}
               page={currentPage}

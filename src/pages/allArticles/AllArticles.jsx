@@ -67,7 +67,7 @@ const AllArticles = () => {
                 {/* filter by title */}
                 <div className="join">
                     <input className="input input-bordered join-item w-[140px] lg:w-[200px]" type='text' onChange={handleSearch} placeholder="Search by title"/>
-                    <button className='btn join-item border-none text-white ml-2 bg-[#0AB99D]'>Search</button>
+                    <button className='btn join-item border-none text-white ml-2 bg-blue-400'>Search</button>
                 </div>
 
             </div>

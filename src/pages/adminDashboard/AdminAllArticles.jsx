@@ -34,7 +34,7 @@ useEffect(()=>{
 
     return (
         <div className='my-10'>
-            <h2 className='text-2xl lg:text-3xl text-center'>All Articles</h2>
+            <h2 className='text-2xl lg:text-3xl text-center lora mb-4'>All Articles</h2>
 
             {
                 loading ?

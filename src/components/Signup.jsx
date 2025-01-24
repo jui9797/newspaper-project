@@ -6,6 +6,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Social from '../shared/Social';
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
+import signupPhoto from '../../src/assets/Mobile login-rafiki.png'
 
 const Signup = () => {
 
@@ -54,11 +55,12 @@ const Signup = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Sign up now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold lora">Sign up now!</h1>
+                        <img className='w-2/3 h-2/3 lg:w-1/2 lg:h-1/2  mx-auto' src={signupPhoto} alt="" />
+                        
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 lora">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -101,11 +103,11 @@ const Signup = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <input className="btn bg-blue-400 text-white" type="submit" value="Sign Up" />
                             </div>
                         </form>
                         <Social></Social>
-                        <p className='ml-4 py-2'><small>Already have an account <Link to="/login">Login</Link></small></p>
+                        <p className='ml-4 py-2'><small>Already have an account <Link to="/login"><span className='text-blue-600 font-bold'>Login</span></Link></small></p>
                     </div>
                 </div>
             </div>
