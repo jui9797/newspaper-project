@@ -27,7 +27,8 @@ const Signup = () => {
                     const userInfo ={
                         name:data.name,
                         email:data.email,
-                        photoURL: data.photoURL
+                        photoURL: data.photoURL,
+                        premiumTaken: null
                       }
                     //   add user in database
                       axiosPublic.post('/users', userInfo)

@@ -28,7 +28,7 @@ const SubscriptionPage = () => {
     
 
     // Navigate to payment page
-    navigate(`/subscription/payment/${selectedOption.price}`, { state: { amount: selectedOption.price } });
+    navigate(`/subscription/payment/${selectedOption.price}`, { state: { amount: selectedOption.price, expiredDate:selectedOption.value } });
   };
 
   return (
