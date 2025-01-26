@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { NavLink, Outlet } from 'react-router-dom';
-import useAdmin from '../../hooks/useAdmin';
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import HelmetTitle from '../../shared/HelmetTitle';
 import { FaHome } from "react-icons/fa";
@@ -8,10 +8,10 @@ import { IoHomeSharp } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
 import { FaUserAlt } from "react-icons/fa";
-import { IoHome } from "react-icons/io5";
+
 
 const Dashboard = () => {
-    const [isAdmin] = useAdmin()
+    
     return (
         <div className='m-4 bg-[#f7f9fb]'>
             <HelmetTitle title="Dashboard || Trendify"></HelmetTitle>

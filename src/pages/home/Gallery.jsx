@@ -1,4 +1,4 @@
-import React from 'react';
+
 import SectionTitle from '../../shared/SectionTitle';
 import useArticles from '../../hooks/useArticles';
 

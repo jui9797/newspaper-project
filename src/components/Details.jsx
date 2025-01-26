@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useQuery } from '@tanstack/react-query';
@@ -9,7 +9,7 @@ const Details = () => {
     const {id} =useParams()
     // console.log(id)
     const axiosPublic = useAxiosPublic()
-    // const hasIncremented = useRef(false);
+    
     const {data: single = {}, isLoading: loading } =useQuery({
         queryKey: ['single', id], 
         queryFn: async() =>{
@@ -28,7 +28,7 @@ const Details = () => {
 useEffect(()=>{
    axiosPublic.patch(`/articles/${id}`)
    .then(res =>{
-    console.log(res.data)
+    // console.log(res.data)
     // setCount(res.view)
    })
 },[axiosPublic, id])
@@ -36,7 +36,7 @@ useEffect(()=>{
 
 
 
-   const {title, image, description,publisher, view, authorName,authorPhoto, authorEmail, postedDate, status, tag, type } = single || {}
+   const {title, image, description,publisher, view, authorName,authorPhoto, authorEmail, postedDate,  tag, type } = single || {}
     return (
         <div className='my-10'>
             {

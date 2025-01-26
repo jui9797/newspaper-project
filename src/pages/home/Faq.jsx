@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import newsphoto from '../../assets/Newsletter-bro.png'
 import SectionTitle from '../../shared/SectionTitle';
@@ -20,7 +20,7 @@ const Faq = () => {
                     form.current.reset();
                 },
                 (error) => {
-                    //   console.log('FAILED...', error.text);
+                      console.log('FAILED...', error.text);
                 },
             );
     };

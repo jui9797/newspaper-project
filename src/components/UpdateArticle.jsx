@@ -34,9 +34,7 @@ const UpdateArticle = () => {
         const formData = new FormData();
         formData.append("image", imageFile);
 
-        // const imageResponse = await axiosPublic.post(image_hosting_api, formData);
-        // console.log(imageResponse.data.success)
-        // console.log(image_hosting_api)
+        
         try {
             // Image upload function
             const uploadImage = async (imageFile) => {
@@ -88,7 +86,7 @@ const UpdateArticle = () => {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Article added successfully!',
+                    title: 'Article updated successfully!',
                     showConfirmButton: false,
                     timer: 1500,
                 });

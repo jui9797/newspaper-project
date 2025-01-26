@@ -4,7 +4,7 @@ import Error from "../Error/Error";
 import Home from "../pages/home/Home";
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Subscription from "../pages/subscription/subscription";
+// import Subscription from "../pages/subscription/subscription";
 import MyProfile from "../components/MyProfile";
 import Dashboard from "../pages/dashboard/Dashboard";
 import AllUsers from "../pages/adminDashboard/AllUsers";
@@ -20,6 +20,8 @@ import AddArticles from "../pages/addArticles/AddArticles";
 import MyArticles from "../pages/myArticles/MyArticles";
 import UpdateArticle from "../components/UpdateArticle";
 import Payment from "../pages/subscription/Payment";
+import Subscription from "../pages/subscription/Subscription";
+// import SubscriptionPage from "../pages/subscription/Subscription";
 
 const router = createBrowserRouter([
     {

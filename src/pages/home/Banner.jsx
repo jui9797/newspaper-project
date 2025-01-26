@@ -24,7 +24,7 @@ const Banner = () => {
 // get top 6 viewed articles
 const axiosPublic =useAxiosPublic()
     const {data: articles = [], isPending: loading} =useQuery({
-        queryKey: ['article'],
+        queryKey: ['article-top'],
         // enabled: !!user?.email,
         queryFn: async() =>{
             
@@ -32,7 +32,7 @@ const axiosPublic =useAxiosPublic()
             return res.data;
         }
     })
-console.log(articles)
+    
 
     return (
         <div className='w-full h-[400px] border-2'>

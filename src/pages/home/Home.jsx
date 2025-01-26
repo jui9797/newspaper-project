@@ -8,25 +8,31 @@ import HelmetTitle from '../../shared/HelmetTitle';
 import Gallery from './Gallery';
 import Faq from './Faq';
 import { useNavigate } from 'react-router-dom';
+import usePremium from '../../hooks/usePremium';
+import useAdmin from '../../hooks/useAdmin';
 
 const Home = () => {
+
+    const [isPremium] = usePremium()
+    const [isAdmin] = useAdmin()
 
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        if (!isPremium && !isAdmin) { 
+          const timer = setTimeout(() => {
             setShowModal(true);
-        }, 10000); 
-
-       
-        return () => clearTimeout(timer);
-    }, []);
-
-    const handleNavigate = () => {
-        setShowModal(false); 
+          }, 10000); 
+    
+          return () => clearTimeout(timer); 
+        }
+      }, [isPremium, isAdmin]); 
+    
+      const handleNavigate = () => {
+        setShowModal(false);
         navigate('/subscription'); 
-    };
+      };
 
 
     return (

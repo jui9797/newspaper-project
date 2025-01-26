@@ -1,4 +1,4 @@
-import React from 'react';
+
 import errorImg from '../../src/assets/404 Error-rafiki.png'
 import { Link } from 'react-router-dom';
 

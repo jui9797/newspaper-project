@@ -1,4 +1,4 @@
-import React from 'react';
+
 import SectionTitle from '../../shared/SectionTitle';
 import { Link } from 'react-router-dom';
 

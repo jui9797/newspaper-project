@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {  addMinutes, addDays } from "date-fns";
 
-const SubscriptionPage = () => {
+const Subscription = () => {
   const [selectedPeriod, setSelectedPeriod] = useState(1);
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const SubscriptionPage = () => {
     const selectedOption = subscriptionOptions.find(
       (option) => option.value === selectedPeriod
     );
-    console.log(selectedOption.price)
+    // console.log(selectedOption.price)
     
     let premiumEnd;
     if (selectedOption.type === "minute") {
@@ -70,9 +70,6 @@ const SubscriptionPage = () => {
   );
 };
 
-export default SubscriptionPage;
+export default Subscription;
 
-// Example updateUserPremiumStatus function to be passed as a prop
-// const updateUserPremiumStatus = (userId, premiumData) => {
-//   // Logic to update user's premium status in the database
-// };
+

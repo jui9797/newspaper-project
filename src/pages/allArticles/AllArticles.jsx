@@ -7,9 +7,9 @@ import usePremium from '../../hooks/usePremium';
 import useAdmin from '../../hooks/useAdmin';
 
 const AllArticles = () => {
-    const [ispremium] = usePremium()
+    const [isPremium] = usePremium()
     const [isAdmin] = useAdmin()
-    console.log(ispremium)
+    // console.log(isPremium)
     const [filters, setFilters] = useState({
    publisher:'', tag:'', title:''
     })
@@ -88,7 +88,7 @@ const AllArticles = () => {
             <div className='my-10 lg:my-20 grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {approvedArticles.map((data) => {
                     return data.type === 'premium' ? (
-                        <PremiumCard key={data._id} data={data} ispremium={ispremium} isAdmin={isAdmin}/>
+                        <PremiumCard key={data._id} data={data} isPremium={isPremium} isAdmin={isAdmin}/>
                     ) : (
                         <NormalCard key={data._id} data={data} />
                     );

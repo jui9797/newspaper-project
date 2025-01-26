@@ -2,7 +2,7 @@
 
 import Swal from "sweetalert2";
 import useAxiosSecure from "../hooks/useAxiosSecure";
-import React, { useRef } from "react";
+import  { useRef } from "react";
 // import { MdDelete } from "react-icons/md";
 
 
@@ -16,10 +16,10 @@ const AdminArticleCard = ({ data }) => {
 
     // apporve
     const handleApprove = (id) => {
-        console.log(id)
+        // console.log(id)
         axiosSecure.patch(`/articles/status/${id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     Swal.fire({
                         position: 'top-end',
@@ -43,11 +43,11 @@ const AdminArticleCard = ({ data }) => {
     const handleReasonSubmit = (e, id) => {
         e.preventDefault();
         const declineReason = e.target.declineReason.value;
-        console.log("Reason for Decline:", declineReason, id);
+        // console.log("Reason for Decline:", declineReason, id);
 
         axiosSecure.patch(`/articles/decline/${id}`, { declineReason })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                    
                     Swal.fire({
@@ -104,7 +104,7 @@ const AdminArticleCard = ({ data }) => {
     const handlePremium = (id) => {
         axiosSecure.patch(`/articles/premium/${id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     Swal.fire({
                         position: 'top-end',

@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
@@ -96,7 +96,7 @@ const CheckoutForm = ({ price }) => {
         else {
             console.log('payment intent', paymentIntent)
             if (paymentIntent.status === 'succeeded') {
-                console.log('transaction id', paymentIntent.id);
+                // console.log('transaction id', paymentIntent.id);
                 setTransactionId(paymentIntent.id);
 
                 // store payment info in the database
@@ -113,7 +113,7 @@ const CheckoutForm = ({ price }) => {
 
                 // patch for
                 const {data} =await axiosSecure.patch(`/premiumTaken/${user?.email}`, {expirationDate})
-                console.log(data)
+                // console.log(data)
                     refetch()
                     Swal.fire({
                         position: 'top-end',

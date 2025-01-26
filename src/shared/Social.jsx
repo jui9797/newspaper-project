@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
@@ -14,7 +14,7 @@ const Social = ({ from }) => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 const userInfo = {
 
                     name: result.user?.
@@ -26,7 +26,7 @@ const Social = ({ from }) => {
                 axiosPublic.post('/users', userInfo)
                     .then(async res => {
 
-                        console.log(res.data)
+                        // console.log(res.data)
                         if (res.data.insertedId || res.data.message === 'user already exist') {
                             // check user premium or not
 
@@ -34,12 +34,12 @@ const Social = ({ from }) => {
 
                             const today = moment().utc();
                             const expirationDate = moment(data.premiumTaken).utc();
-                            console.log(expirationDate);
+                            // console.log(expirationDate);
                              if (!expirationDate.isAfter(today)) {
-                                console.log('testing')
+                                // console.log('testing')
                              axiosPublic.patch(`/expired/${result.user?.email}`)
                                     .then(res => {
-                                        console.log(res.data)
+                                        // console.log(res.data)
                                         if (res.data.modifiedCount > 0) {
                                             Swal.fire({
                                                 position: 'top-end',

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import useAdmin from '../hooks/useAdmin';
 import { AuthContext } from '../provider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -8,7 +8,7 @@ const AdminRoute = ({children}) => {
     const {user, loading, logOut} = useContext(AuthContext)
     const location =useLocation()
     if(loading || isAdminLoading){
-        return <p>Loading...</p>
+        return <span className="loading loading-dots loading-md"></span>
     }
 
     if (user && isAdmin) {

@@ -15,7 +15,7 @@ const AdminHome = () => {
             return res.data;
         }
     })
-    console.log(article)
+    // console.log(article)
 
     // first chart info
     const data = [

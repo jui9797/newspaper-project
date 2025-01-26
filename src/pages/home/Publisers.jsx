@@ -1,4 +1,4 @@
-import React from 'react';
+
 import SectionTitle from '../../shared/SectionTitle';
 import usePublisher from '../../hooks/usePublisher';
 import Marquee from 'react-fast-marquee';

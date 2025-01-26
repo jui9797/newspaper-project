@@ -8,7 +8,7 @@ const usePremium = () => {
     const {user} = useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
 
-    const {data:ispremium, isPending:isPremuiumLoading, refetch} =useQuery({
+    const {data:isPremium, isPending:isPremuiumLoading, refetch} =useQuery({
         queryKey: [user?.email, 'isPremium'],
         enabled: !! user?.email && !!localStorage.getItem('access-token'),
         queryFn: async () => {
@@ -22,7 +22,7 @@ const usePremium = () => {
             }
         }
     })
-    return [ispremium, isPremuiumLoading, refetch]
+    return [isPremium, isPremuiumLoading, refetch]
 };
 
 export default usePremium;

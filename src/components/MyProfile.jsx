@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
-import { useSwiper } from 'swiper/react';
+
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
@@ -20,9 +20,9 @@ const MyProfile = () => {
             return res.data;
         }
     })
-    console.log(users)
+    // console.log(users)
     const displayUser = users.find(data => data.email === user?.email);
-    console.log(displayUser)
+    // console.log(displayUser)
 
 
     const handleUpdate = (e) => {
@@ -64,7 +64,7 @@ const MyProfile = () => {
         // update user info in database
         axiosPublic.patch(`/user/${user.email}`, updatedUser)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 Swal.fire({
                     title: 'User profile updated.',
                     showClass: {

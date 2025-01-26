@@ -1,4 +1,4 @@
-import React from 'react';
+
 import SectionTitle from '../../shared/SectionTitle';
 
 import { Elements } from '@stripe/react-stripe-js';
