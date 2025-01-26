@@ -26,6 +26,9 @@ const Nav = () => {
         {
             isPremium && <NavLink to='/premium'>Premium Articles</NavLink>
         }
+        {
+            isAdmin && <NavLink to='/premium'>Premium Articles</NavLink>
+        }
         
         <NavLink to='/myArticles'>My Articles</NavLink>
         

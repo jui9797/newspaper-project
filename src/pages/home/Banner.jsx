@@ -62,7 +62,7 @@ console.log(articles)
                     {
                         // console.log(article.image)
                     return <SwiperSlide key={article._id}>
-                    <img src={article?.image} alt="img" />
+                    <img src={article?.image} alt="img" className='object-cover' />
                     </SwiperSlide>
                     }
                        

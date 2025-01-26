@@ -4,9 +4,11 @@ import NormalCard from '../../components/NormalCard';
 import PremiumCard from '../../components/premiumCard';
 import HelmetTitle from '../../shared/HelmetTitle';
 import usePremium from '../../hooks/usePremium';
+import useAdmin from '../../hooks/useAdmin';
 
 const AllArticles = () => {
     const [ispremium] = usePremium()
+    const [isAdmin] = useAdmin()
     console.log(ispremium)
     const [filters, setFilters] = useState({
    publisher:'', tag:'', title:''
@@ -37,10 +39,10 @@ const AllArticles = () => {
                         className="select select-bordered w-full max-w-xs"
                         name="publisher"
                         onChange={handleFilterChange}
-                        value={filters.publisher}
-                        defaultValue="" // Default value for placeholder
+                        defaultValue={filters.publisher}
+                         // Default value for placeholder
                     >
-                        <option className='text-gray-700' value="" disabled>
+                        <option className='text-gray-700' defaultValue='' disabled>
                             Select publisher
                         </option>
                         <option className='' value="Green Planet Journal">Green Planet Journal</option>
@@ -55,10 +57,10 @@ const AllArticles = () => {
                         className="select select-bordered w-full max-w-xs"
                         name="tag"
                         onChange={handleFilterChange}
-                        value={filters.tag}
-                        defaultValue="" // Default value for placeholder
+                        defaultValue={filters.tag}
+                         // Default value for placeholder
                     >
-                        <option className='text-gray-700' value="" disabled>
+                        <option className='text-gray-700' defaultValue="" disabled>
                             Select tag
                         </option>
                         <option className='' value="science">science</option>
@@ -86,7 +88,7 @@ const AllArticles = () => {
             <div className='my-10 lg:my-20 grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {approvedArticles.map((data) => {
                     return data.type === 'premium' ? (
-                        <PremiumCard key={data._id} data={data} ispremium={ispremium} />
+                        <PremiumCard key={data._id} data={data} ispremium={ispremium} isAdmin={isAdmin}/>
                     ) : (
                         <NormalCard key={data._id} data={data} />
                     );
