@@ -13,7 +13,7 @@ const MyArticles = () => {
     const axiosSecure = useAxiosSecure()
     // const modalRef = useRef();
     const { data: article = [], isPending: loading, refetch } = useQuery({
-        queryKey: ['article', user?.email],
+        queryKey: ['single-user', user?.email],
         queryFn: async () => {
             if (!user?.email) return []; // Return empty if no user email is found
             const res = await axiosPublic.get(`/articles?email=${user.email}`);

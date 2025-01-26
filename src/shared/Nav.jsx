@@ -1,16 +1,20 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { MdLogin } from "react-icons/md";
 import { MdLogout } from "react-icons/md";
 import registerImg from '../assets/user.png'
-import { GiHamburgerMenu } from "react-icons/gi";
+
 import { AuthContext } from '../provider/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
+import usePremium from '../hooks/usePremium';
+
 
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
     const [isAdmin] = useAdmin()
-
+    const [isPremium] = usePremium()
+    // console.log(isPremium)
+ 
     const links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/allArticles'>All Articles</NavLink>
@@ -19,9 +23,12 @@ const Nav = () => {
         {
             isAdmin && <NavLink to='/dashboard/home'>Dashboard</NavLink>
         }
+        {
+            isPremium && <NavLink to='/premium'>Premium Articles</NavLink>
+        }
         
         <NavLink to='/myArticles'>My Articles</NavLink>
-        <NavLink to='/premium'>Premium Articles</NavLink>
+        
     </>
 
     const handleLogout = () => {

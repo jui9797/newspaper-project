@@ -14,7 +14,7 @@ const AllUsers = () => {
 
   
   const { data: user = {}, refetch } = useQuery({
-    queryKey: ["users", currentPage, limit],
+    queryKey: ["users-page", currentPage, limit],
     queryFn: async () => {
       const res = await axiosSecure.get(`/users?page=${currentPage}&limit=${limit}`);
       return res.data; 

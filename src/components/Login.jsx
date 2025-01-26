@@ -1,24 +1,91 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Social from '../shared/Social';
 import loginPhoto from '../../src/assets/Mobile login-bro.png'
+import useAxiosPublic from '../hooks/useAxiosPublic';
+import moment from 'moment/moment';
+
 
 const Login = () => {
-    
+
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('')
+    const axiosPublic = useAxiosPublic()
+
 
     const from = location.state?.from?.pathname || "/";
     // console.log(from)
-    const handleLogin = event => {
+    const handleLogin = async (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        // validate premium user or not
+        const { data } = await axiosPublic.get(`/user/${email}`);
+        
+
+        const today = moment().utc(); 
+        
+
+        const expirationDate = moment(data.premiumTaken).utc(); 
+       
+
+        if (expirationDate.isAfter(today)) {
+            // console.log("The premium is still valid.");
+            signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true });
+            })
+            .catch(err=>{
+                setError(err.message)
+            })
+
+        } else {
+            // console.log("The premium has expired.");
+            axiosPublic.patch(`/expired/${email}`)
+            .then(res=>{
+                console.log(res.data)
+                if (res.data.modifiedCount > 0){
+                    signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true });
+            })
+            .catch(err=>{
+                setError(err.message)
+            })
+                }
+            })
+        }
+
+
+
         // console.log(email, password);
         signIn(email, password)
             .then(result => {
@@ -61,15 +128,15 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
-                                
+
                             </div>
-                            
+
                             <div className="form-control mt-6">
-                                <input  className="btn bg-blue-400 text-white" type="submit" value="Login" />
+                                <input className="btn bg-blue-400 text-white" type="submit" value="Login" />
                             </div>
                         </form>
-                       <Social from={from}></Social>
-                       {error && <p className='font-bold text-red-500'>{error}</p>}
+                        <Social from={from}></Social>
+                        {error && <p className='font-bold text-red-500'>{error}</p>}
                         <p className='ml-4 py-4'><small>New Here? <Link to="/signup"><span className='text-blue-600 font-bold'>Create an account</span></Link> </small></p>
                     </div>
                 </div>

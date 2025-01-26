@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 const useArticles = (filters) => {
     const axiosPublic =useAxiosPublic()
     const {data: article = [], isPending: loading, refetch} =useQuery({
-        queryKey: ['article', filters], 
+        queryKey: ['articles', filters], 
         queryFn: async() =>{
             const params = new URLSearchParams(filters).toString()
             const res = await axiosPublic.get(`/articles?${params}`);

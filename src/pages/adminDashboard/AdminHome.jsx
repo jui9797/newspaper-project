@@ -1,4 +1,4 @@
-import React from 'react';
+
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Chart from 'react-google-charts';
@@ -8,7 +8,7 @@ const AdminHome = () => {
 
     const axiosSecure = useAxiosSecure()
     const { data: article = [], isPending: loading } = useQuery({
-        queryKey: ['article'],
+        queryKey: ['article-ratio'],
         queryFn: async () => {
 
             const res = await axiosSecure.get('/publishers-stats');
@@ -17,6 +17,7 @@ const AdminHome = () => {
     })
     console.log(article)
 
+    // first chart info
     const data = [
         ["Publisher", "Percentage"],
         ...article.map((item) => [item.name.trim(), parseFloat(item.percentage)]),
@@ -27,6 +28,19 @@ const AdminHome = () => {
         pieHole: 0.4, // Optional: for a donut chart effect
         is3D: true,
       };
+
+// chart 2 
+const data2 = [
+    ["Publisher", "%"],
+        ...article.map((item) => [item.name.trim(), parseFloat(item.percentage)]),
+  ];
+  
+  const options2 = {
+    title: "Publication Articles Distribution",
+    hAxis: { title: "Publisher", titleTextStyle: { color: "#333" } },
+    vAxis: { minValue: 0 },
+    chartArea: { width: "70%", height: "70%" },
+  };
 
 
     return (
@@ -49,7 +63,7 @@ const AdminHome = () => {
 
                 </div>
                 <div className='border-2'>
-                    <h3>Rechart</h3>
+                <Chart chartType="AreaChart" data={data2} options={options2} />;
                 </div>
             </div>
         </div>

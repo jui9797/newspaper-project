@@ -14,13 +14,18 @@ import './styles.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Banner = () => {
+    const {user} = useContext(AuthContext)
+
 
 // get top 6 viewed articles
 const axiosPublic =useAxiosPublic()
     const {data: articles = []} =useQuery({
-        queryKey: ['article'], 
+        queryKey: ['article'],
+        enabled: !!user?.email,
         queryFn: async() =>{
             
             const res = await axiosPublic.get('/topViewed');
@@ -48,9 +53,13 @@ const axiosPublic =useAxiosPublic()
 
                 {
                     articles?.map(article=>
-                        <SwiperSlide key={article._id}>
+                    {
+                        // console.log(article.image)
+                    return <SwiperSlide key={article._id}>
                     <img src={article?.image} alt="img" />
-                </SwiperSlide>
+                    </SwiperSlide>
+                    }
+                       
                     )
                 }
 

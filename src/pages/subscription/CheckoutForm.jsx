@@ -4,8 +4,10 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import usePremium from '../../hooks/usePremium';
 
 const CheckoutForm = ({ price }) => {
+    const [,,refetch] = usePremium()
     const location = useLocation()
     // console.log(location)
     // console.log(price)
@@ -112,11 +114,11 @@ const CheckoutForm = ({ price }) => {
                 // patch for
                 const {data} =await axiosSecure.patch(`/premiumTaken/${user?.email}`, {expirationDate})
                 console.log(data)
-
+                    refetch()
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'User created successfully.',
+                        title: 'payment successfully.',
                         showConfirmButton: false,
                         timer: 1500
                     });

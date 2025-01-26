@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useArticles from '../../hooks/useArticles';
 import NormalCard from '../../components/NormalCard';
 import PremiumCard from '../../components/premiumCard';

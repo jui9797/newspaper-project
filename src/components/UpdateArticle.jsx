@@ -1,5 +1,5 @@
 
-import Select from 'react-select/base';
+
 import useAxiosPublic from '../hooks/useAxiosPublic';
 import usePublisher from '../hooks/usePublisher';
 import { useForm } from 'react-hook-form';
@@ -95,7 +95,7 @@ const UpdateArticle = () => {
                 navigate('/myArticles')
             }
         } catch (error) {
-            // console.error('Error uploading images or submitting article:', error);
+            console.error('Error uploading images or submitting article:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

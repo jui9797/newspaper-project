@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     
     const {data: users = []} =useQuery({
-        queryKey: ['users'], 
+        queryKey: ['user-role'], 
         queryFn: async() =>{
             
             const res = await axiosPublic.get('/allUsers');
