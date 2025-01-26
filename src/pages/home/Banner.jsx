@@ -23,16 +23,16 @@ const Banner = () => {
 
 // get top 6 viewed articles
 const axiosPublic =useAxiosPublic()
-    const {data: articles = []} =useQuery({
+    const {data: articles = [], isPending: loading} =useQuery({
         queryKey: ['article'],
-        enabled: !!user?.email,
+        // enabled: !!user?.email,
         queryFn: async() =>{
             
             const res = await axiosPublic.get('/topViewed');
             return res.data;
         }
     })
-// console.log(articles)
+console.log(articles)
 
     return (
         <div className='w-full h-[400px] border-2'>
@@ -50,6 +50,12 @@ const axiosPublic =useAxiosPublic()
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
+                {/* article array empty */}
+                {
+                    loading && (<SwiperSlide >
+                        <p className='text-3xl'>Loading..!</p>
+                        </SwiperSlide>)
+                }
 
                 {
                     articles?.map(article=>

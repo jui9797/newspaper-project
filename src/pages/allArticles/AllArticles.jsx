@@ -3,8 +3,11 @@ import useArticles from '../../hooks/useArticles';
 import NormalCard from '../../components/NormalCard';
 import PremiumCard from '../../components/premiumCard';
 import HelmetTitle from '../../shared/HelmetTitle';
+import usePremium from '../../hooks/usePremium';
 
 const AllArticles = () => {
+    const [ispremium] = usePremium()
+    console.log(ispremium)
     const [filters, setFilters] = useState({
    publisher:'', tag:'', title:''
     })
@@ -26,7 +29,7 @@ const AllArticles = () => {
     return (
         <div className='my-10'>
             <HelmetTitle title="All Article || Trendify"></HelmetTitle>
-            <h2 className='text-3xl mb-4'>Articles are here</h2>
+            <h2 className='text-3xl mb-4 lora'>Articles are here</h2>
             <div className='flex gap-4 flex-wrap'>
                 {/* filter by publisher */}
             <div>
@@ -83,7 +86,7 @@ const AllArticles = () => {
             <div className='my-10 lg:my-20 grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {approvedArticles.map((data) => {
                     return data.type === 'premium' ? (
-                        <PremiumCard key={data._id} data={data} />
+                        <PremiumCard key={data._id} data={data} ispremium={ispremium} />
                     ) : (
                         <NormalCard key={data._id} data={data} />
                     );

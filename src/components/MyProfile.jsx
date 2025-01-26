@@ -87,7 +87,7 @@ const MyProfile = () => {
                     <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 border-2">
                         <img src={user.photoURL} alt="" className=" lg:w-2/3 mx-auto rounded-t-md h-60 lg:h-72 dark:bg-gray-500 p-4" />
                         <div className="text-center p-3 space-y-2 relative">
-                            <div className='p-2 lg:p-3 w-16 rounded-lg bg-blue-400 text-white absolute left-[82px] bottom-24 lg:left-48 lg:bottom-24'>{displayUser.role}</div>
+                            <div className='p-2 lg:p-3 w-16 rounded-lg bg-blue-400 text-white absolute left-[82px] bottom-24 lg:left-48 lg:bottom-24'>{displayUser?.role}</div>
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-semibold tracking-wide">{user.displayName}</h2>
                                 <p className="dark:text-gray-800">Email: {user.email}</p>

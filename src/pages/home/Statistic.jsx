@@ -1,11 +1,15 @@
-import React from 'react';
+
 import SectionTitle from '../../shared/SectionTitle';
 import useAllUsers from '../../hooks/useAllUsers';
 import CountUp from 'react-countup';
 
+
 const Statistic = () => {
     const [users] = useAllUsers()
+    
     // console.log(users)
+    const premiumUsers = users.filter(item =>item.premiumTaken !== null && item.role !== 'admin')
+    // console.log(premiumUsers)
 
 
     return (
@@ -20,7 +24,7 @@ const Statistic = () => {
                     <div className="stat-value">
                         {/* CountUp Component */}
                         <CountUp
-                            key={users.length} // Ensures re-animation when users.length changes
+                            key={users.length} 
                             end={users.length}
                             duration={20}
                             separator=","
@@ -31,14 +35,28 @@ const Statistic = () => {
 
                 <div className="stat text-center">
                     <div className="stat-title">Normal Users</div>
-                    <div className="stat-value">4,200</div>
-                    <div className="stat-desc">↗︎ 400 (22%)</div>
+                    <div className="stat-value">
+                    <CountUp
+                            key={users.length} 
+                            end={users.length}
+                            duration={20}
+                            separator=","
+                        />
+                    </div>
+                    
                 </div>
 
                 <div className="stat text-center">
                     <div className="stat-title">Premium Users</div>
-                    <div className="stat-value">1,200</div>
-                    <div className="stat-desc">↘︎ 90 (14%)</div>
+                    <div className="stat-value">
+                    <CountUp
+                            key={premiumUsers.length} 
+                            end={premiumUsers.length}
+                            duration={20}
+                            separator=","
+                        />
+                    </div>
+                    
                 </div>
             </div>
         </div>
