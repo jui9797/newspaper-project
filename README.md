@@ -114,7 +114,7 @@ This is a full-stack Newspaper Aggregation Website where users can read, publish
 ---
 
 ## Live Site
-[https://trendify-57be1.web.app/](#)
+[https://trendify-57be1.web.app/]
 
 ---
 
