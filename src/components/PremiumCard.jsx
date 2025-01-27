@@ -1,7 +1,11 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const PremiumCard = ({ data, isPremium, isAdmin }) => {
+    const navigate = useNavigate()
+    if(!isPremium){
+        return navigate('/subscription')
+    }
     return (
         <div className='h-[400px] flex flex-col border-2 rounded-lg p-2 shadow-xl'>
             <div className='h-[200px]'>
