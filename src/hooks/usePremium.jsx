@@ -10,7 +10,7 @@ const usePremium = () => {
 
     const {data:isPremium, isPending:isPremuiumLoading, refetch} =useQuery({
         queryKey: [user?.email, 'isPremium'],
-        enabled: !! user?.email && !!localStorage.getItem('access-token'),
+        enabled: !!user?.email && !!localStorage.getItem('access-token'),
         queryFn: async () => {
             try {
                 const res = await axiosSecure.get(`/users/premium/${user.email}`);
