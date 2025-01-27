@@ -8,7 +8,7 @@ import usePremium from '../../hooks/usePremium';
 const Premium = () => {
     const [article, loading] =useArticles()
     const [isAdmin] = useAdmin()
-    const [isPremium] = usePremium()
+    const [isPremium, isPremuiumLoading] = usePremium()
     // console.log(article)
 const premiumArticles = article.filter(premium=> premium.type === 'premium')
 // console.log(premiumArticles)
@@ -22,7 +22,7 @@ const premiumArticles = article.filter(premium=> premium.type === 'premium')
                      <p>Loading...</p> 
                       : 
                       (
-                        premiumArticles.map(data =><PremiumCard key={data._id} data={data} isAdmin={isAdmin} isPremium={isPremium}></PremiumCard>)
+                        premiumArticles.map(data =><PremiumCard key={data._id} data={data} isAdmin={isAdmin} isPremium={isPremium} isPremuiumLoading={isPremuiumLoading}></PremiumCard>)
                       )
                 }
             </div>
