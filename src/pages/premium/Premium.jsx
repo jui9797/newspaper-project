@@ -1,14 +1,15 @@
 
 import useArticles from '../../hooks/useArticles';
-import PremiumCard from '../../components/premiumCard';
+
 import HelmetTitle from '../../shared/HelmetTitle';
 import useAdmin from '../../hooks/useAdmin';
 import usePremium from '../../hooks/usePremium';
+import UniqueCard from '../../components/UniqueCard';
 
 const Premium = () => {
     const [article, loading] =useArticles()
     const [isAdmin] = useAdmin()
-    const [isPremium, isPremuiumLoading] = usePremium()
+    const [isPremium] = usePremium()
     // console.log(article)
 const premiumArticles = article.filter(premium=> premium.type === 'premium')
 // console.log(premiumArticles)
@@ -22,7 +23,7 @@ const premiumArticles = article.filter(premium=> premium.type === 'premium')
                      <p>Loading...</p> 
                       : 
                       (
-                        premiumArticles.map(data =><PremiumCard key={data._id} data={data} isAdmin={isAdmin} isPremium={isPremium} isPremuiumLoading={isPremuiumLoading}></PremiumCard>)
+                        premiumArticles.map(data =><UniqueCard key={data._id} data={data} isAdmin={isAdmin} isPremium={isPremium}></UniqueCard>)
                       )
                 }
             </div>

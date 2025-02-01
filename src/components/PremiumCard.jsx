@@ -1,14 +1,14 @@
 
-import { Link, Navigate} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-const PremiumCard = ({ data, isPremium, isAdmin , isPremuiumLoading}) => {
+const PremiumCard = ({ data, isPremium, isAdmin }) => {
     // const navigate = useNavigate()
-    if(isPremuiumLoading){
-        return <h1>Loading...!</h1>
-    }
-    if(!isPremium){
-        return <Navigate to='/subscription'></Navigate>
-    }
+    // if(isPremuiumLoading){
+    //     return <h1>Loading...!</h1>
+    // }
+    // if(!isPremium){
+    //     return <Navigate to='/subscription'></Navigate>
+    // }
     return (
         <div className='h-[400px] flex flex-col border-2 rounded-lg p-2 shadow-xl'>
             <div className='h-[200px]'>
