@@ -5,8 +5,11 @@ import PremiumCard from '../../components/premiumCard';
 import HelmetTitle from '../../shared/HelmetTitle';
 import usePremium from '../../hooks/usePremium';
 import useAdmin from '../../hooks/useAdmin';
+import usePublisher from '../../hooks/usePublisher';
 
 const AllArticles = () => {
+    const [publishers] = usePublisher()
+    
     const [isPremium] = usePremium()
     const [isAdmin] = useAdmin()
     // console.log(isPremium)
@@ -45,10 +48,11 @@ const AllArticles = () => {
                         <option className='text-gray-700' defaultValue='' disabled>
                             Select publisher
                         </option>
-                        <option className='' value="Green Planet Journal">Green Planet Journal</option>
-                        <option className='' value="Tech World Daily">Tech World Daily </option>
-                        <option className='' value="Wellness Weekly">Wellness Weekly</option>
-                        <option className='' value="Nature Explorers">Nature Explorers</option>
+                        {
+                            publishers.map(pub=><option key={pub._id} className='' value={pub.name}>{pub.name}</option>)
+                        }
+                        
+                        
                     </select>
                 </div>
                 {/* filter by tag */}

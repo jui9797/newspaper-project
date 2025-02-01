@@ -1,4 +1,4 @@
-# Newspaper Aggregation Website
+# TRENDIFY(newspaper aggregation website)
 
 ## Overview
 This is a full-stack Newspaper Aggregation Website where users can read, publish, and manage articles. Admins have exclusive controls to oversee the platform, including approving or declining articles, managing users, and setting premium features. The project includes a user-friendly interface and ensures robust functionality with authentication, secure routes, and responsive design.

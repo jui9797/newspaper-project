@@ -35,7 +35,7 @@ const axiosPublic =useAxiosPublic()
     
 
     return (
-        <div className='w-full h-[400px] border-2'>
+        <div className='w-full h-[450px]'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -62,7 +62,7 @@ const axiosPublic =useAxiosPublic()
                     {
                         // console.log(article.image)
                     return <SwiperSlide key={article._id}>
-                    <img src={article?.image} alt="img" className='object-cover' />
+                    <img src={article?.image} alt="img" className='w-full h-full object-center' />
                     </SwiperSlide>
                     }
                        
