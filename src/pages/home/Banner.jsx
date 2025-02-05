@@ -62,7 +62,7 @@ const axiosPublic =useAxiosPublic()
                     {
                         // console.log(article.image)
                     return <SwiperSlide key={article._id}>
-                        <div className='bg-url bg-contain bg-no-repeat w-full h-full'
+                        <div className=' w-full h-full bg-no-repeat bg-cover'
                         style={{ backgroundImage: `url('${article.image}')` }}>
 
                         </div>
