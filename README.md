@@ -80,8 +80,8 @@ This is a full-stack Newspaper Aggregation Website where users can read, publish
 
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-jui9797>
-   git clone <https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-jui9797>
+   git clone <https://github.com/jui9797/newspaper-project>
+   git clone <https://github.com/jui9797/newspaper-project-server>
    ```
 
 2. Navigate to client and server directories:
@@ -120,8 +120,8 @@ This is a full-stack Newspaper Aggregation Website where users can read, publish
 
 ## GitHub Repositories
 
-- **Frontend**: [https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-jui9797](#)
-- **Backend**: [https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-jui9797](#)
+- **Frontend**: [https://github.com/jui9797/newspaper-project](#)
+- **Backend**: [https://github.com/jui9797/newspaper-project-server](#)
 
 ---
 
