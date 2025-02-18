@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import usePremium from '../../hooks/usePremium';
 import useAdmin from '../../hooks/useAdmin';
 import ExclusiveNews from './ExclusiveNews';
+import Authors from './Authors';
 
 const Home = () => {
 
@@ -52,6 +53,7 @@ const Home = () => {
             <Plans></Plans>
             </div>
             <Gallery></Gallery>
+            <Authors></Authors>
             <Faq></Faq>
 
             {/* Modal */}

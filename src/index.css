@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .active{
-    color:rgb(168, 85, 247);
+    color:rgb(139, 63, 211);
     font-weight: bolder;
     
 }

@@ -2,10 +2,10 @@
 const Footer = () => {
     return (
         
-            <footer className="py-6 dark:bg-gray-100 dark:text-gray-900 bg-blue-400 text-white lora">
+            <footer className="py-6 dark:bg-gray-800 dark:text-gray-900 bg-blue-400 text-white lora">
                 <div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
                     <div className="grid grid-cols-12">
-                        <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
+                        <div className="pb-6 col-span-full md:pb-0 md:col-span-6 dark:text-white">
                             
                                 
                                 <p><span className="self-center text-2xl font-semibold lora">TRENDIFY</span></p>
@@ -14,7 +14,7 @@ const Footer = () => {
                             
                         </div>
                         
-                        <div className="col-span-6 md:text-left md:col-span-3">
+                        <div className="col-span-6 md:text-left md:col-span-3 dark:text-white">
                             <p className="pb-1 text-lg font-medium">Pages</p>
                             <ul>
                                 <li>
@@ -33,7 +33,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="grid justify-center pt-6 lg:justify-between">
+                    <div className="grid justify-center pt-6 lg:justify-between dark:text-white">
                         <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
                             <span>©2025 All rights reserved</span>
                             <a rel="noopener noreferrer" href="#">

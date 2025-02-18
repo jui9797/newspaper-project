@@ -56,7 +56,7 @@ const Nav = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-5 w-5 text-white"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -91,13 +91,13 @@ const Nav = () => {
                         user ? <>
                             <div className='flex gap-2'>
                                 <Link to='/myProfile'><img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="profile" /></Link>
-                                <button onClick={handleLogout} className='btn text-blue-500 font-bold'><MdLogout /></button>
+                                <button onClick={handleLogout} className='btn text-blue-500 font-bold hover:bg-blue-400 hover:text-white border-2'><MdLogout /></button>
                             </div>
                         </> :
                             <>
                                 <div className='flex gap-2'>
-                                    <button className='btn text-blue-500'><Link to='/signup'><img className='w-6 h-6' src={registerImg} alt="" /></Link></button>
-                                    <button className='btn text-blue-500 font-bold'><Link to='/login'><MdLogin /></Link></button>
+                                    <button className='btn text-blue-500 font-bold hover:bg-blue-400 hover:text-white border-2'><Link to='/signup'><img className='w-6 h-6' src={registerImg} alt="" /></Link></button>
+                                    <button className='btn text-blue-500 font-bold hover:bg-blue-400 hover:text-white border-2'><Link to='/login'><MdLogin /></Link></button>
                                 </div>
                             </>
                     }
