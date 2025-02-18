@@ -46,8 +46,8 @@ const Nav = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto sticky top-0 z-30'>
-            <div className="navbar bg-blue-400">
+        <div className='bg-blue-400 sticky top-0 z-30'>
+            <div className="navbar w-11/12 mx-auto">
 
 
                 <div className="navbar-start">
@@ -73,7 +73,7 @@ const Nav = () => {
                         </ul>
                     </div>
 
-                    <a className=" text-xl lg:text-2xl lora text-white">TRENDIFY</a>
+                    <a className=" text-xl lg:text-2xl lora text-white font-bold">TRENDIFY</a>
                 </div>
 
                 <div className="navbar-center hidden lg:flex text-white">

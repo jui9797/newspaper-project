@@ -36,9 +36,10 @@ const Home = () => {
 
 
     return (
-        <div>
+        <>
             <HelmetTitle title="Home || Trendify"></HelmetTitle>
             <Banner></Banner>
+            <div className='w-11/12 mx-auto'>
             <div className='my-10 lg:my-20'>
             <Publisers></Publisers>
             </div>
@@ -66,7 +67,8 @@ const Home = () => {
                     </div>
                 </div>
             )}
-        </div>
+            </div>
+        </>
     );
 };
 

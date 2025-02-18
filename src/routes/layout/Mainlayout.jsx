@@ -7,7 +7,7 @@ const Mainlayout = () => {
     return (
         <div className='bg-[#f7f9fb]'>
             <Nav></Nav>
-            <div className='w-11/12 mx-auto min-h-[80vh]'>
+            <div className='min-h-[80vh]'>
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
