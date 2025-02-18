@@ -7,6 +7,7 @@ import usePremium from '../../hooks/usePremium';
 import useAdmin from '../../hooks/useAdmin';
 import usePublisher from '../../hooks/usePublisher';
 
+
 const AllArticles = () => {
     const [publishers] = usePublisher()
     
@@ -31,10 +32,12 @@ const AllArticles = () => {
 
   const approvedArticles = article.filter(data => data.status === 'approved');
 
+ 
+
     return (
-        <div className='my-10'>
+        <div className='my-10 px-6'>
             <HelmetTitle title="All Article || Trendify"></HelmetTitle>
-            <h2 className='text-3xl mb-4 lora'>Articles are here</h2>
+            <h2 className='text-3xl mb-4 lora dark:text-white'> All Articles are here</h2>
             <div className='flex gap-4 flex-wrap'>
                 {/* filter by publisher */}
             <div>
@@ -82,7 +85,7 @@ const AllArticles = () => {
             </div>
 
            {
-            approvedArticles.length === 0? <p className='text-4xl text-center my-10'>No Article ...</p> : ''
+            approvedArticles.length === 0? <p className='text-4xl text-center my-10 dark:text-white'>No Article ...</p> : ''
            }
            {
             loading? <span className="loading loading-dots loading-lg"></span>: ''
@@ -92,7 +95,7 @@ const AllArticles = () => {
             <div className='my-10 lg:my-20 grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {approvedArticles.map((data) => {
                     return data.type === 'premium' ? (
-                        <PremiumCard key={data._id} data={data} isPremium={isPremium} isAdmin={isAdmin}/>
+                        <PremiumCard  key={data._id} data={data} isPremium={isPremium} isAdmin={isAdmin}/>
                     ) : (
                         <NormalCard key={data._id} data={data} />
                     );

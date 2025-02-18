@@ -32,7 +32,7 @@ const Subscription = () => {
   };
 
   return (
-    <div className="subscription-page bg-gray-100 min-h-screen">
+    <div className="subscription-page bg-gray-100 dark:bg-gray-800 min-h-screen">
       <div className="banner bg-blue-400 text-white text-center py-10">
         <h1 className="text-4xl font-bold">Get Premium Access Now!</h1>
         <p className="mt-4 text-lg">Choose a subscription plan and enjoy exclusive benefits.</p>

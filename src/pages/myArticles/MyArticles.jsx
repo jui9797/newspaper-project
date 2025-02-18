@@ -82,8 +82,8 @@ const handleDelete = (id) => {
                             {
                                 article.map((item, index) =>
                                     <tr key={index}>
-                                        <th>{index + 1}</th>
-                                        <td className='font-bold lora'>{item.title}</td>
+                                        <th className='dark:text-white'>{index + 1}</th>
+                                        <td className='font-bold lora dark:text-white'>{item.title}</td>
                                         <td>
                                             {item.status === 'declined' ? (
                                                 <>
@@ -118,7 +118,7 @@ const handleDelete = (id) => {
                                             <button className='btn btn-xs bg-blue-500 text-white'><Link to={`/details/${item._id}`}>Details</Link></button>
                                         </td>
 
-                                        <td>
+                                        <td className='dark:text-white'>
                                             {item.type === 'premium' ? 'Yes' : 'No'}
                                         </td>
                                         <td>

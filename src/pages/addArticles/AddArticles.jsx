@@ -107,9 +107,9 @@ const AddArticles = () => {
 
 
     return (
-        <div className='my-10'>
+        <div className='my-10  px-6'>
             <HelmetTitle title="Add Article || Trendify"></HelmetTitle>
-            <h2 className='text-2xl lora font-bold'>Add an article</h2>
+            <h2 className='text-2xl lora font-bold dark:text-white'>Add an article</h2>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='border-2 p-2'>
 
@@ -117,7 +117,7 @@ const AddArticles = () => {
                         {/* title */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Title</span>
+                                <span className="label-text dark:text-white">Title</span>
                             </label>
                             <input
                                 type="text"
@@ -130,7 +130,7 @@ const AddArticles = () => {
                         {/* publisher */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Publisher</span>
+                                <span className="label-text dark:text-white">Publisher</span>
                             </label>
                             <select defaultValue="default" {...register('publisher', { required: true })}
                                 className="select select-bordered w-full">
@@ -147,7 +147,7 @@ const AddArticles = () => {
                         {/* author name */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Author Name</span>
+                                <span className="label-text dark:text-white">Author Name</span>
                             </label>
                             <input
                                 type="text"
@@ -159,7 +159,7 @@ const AddArticles = () => {
                         {/* author email */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Author Email</span>
+                                <span className="label-text dark:text-white">Author Email</span>
                             </label>
                             <input
                                 type="email"
@@ -173,7 +173,7 @@ const AddArticles = () => {
                         {/* posted date*/}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Posted Date</span>
+                                <span className="label-text dark:text-white">Posted Date</span>
                             </label>
                             <input
                                 type="date"
@@ -185,7 +185,7 @@ const AddArticles = () => {
                         {/* status */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Status</span>
+                                <span className="label-text dark:text-white">Status</span>
                             </label>
                             <input
                                 type="text"
@@ -201,7 +201,7 @@ const AddArticles = () => {
                         {/* tag */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Tag</span>
+                                <span className="label-text dark:text-white">Tag</span>
                             </label>
                             <Select
                                 {...register('tag')}
@@ -217,7 +217,7 @@ const AddArticles = () => {
                         {/* type */}
                         <div className="form-control w-full my-4">
                             <label className="label">
-                                <span className="label-text">Type</span>
+                                <span className="label-text dark:text-white">Type</span>
                             </label>
                             <input
                                 type="text"
@@ -233,7 +233,7 @@ const AddArticles = () => {
                         {/* author photo */}
                         <div className="form-control w-full my-4 ">
                             <label className="label">
-                                <span className="label-text">Author Photo</span>
+                                <span className="label-text dark:text-white">Author Photo</span>
                             </label>
                             <input {...register('authorPhoto', { required: true })} name='authorPhoto' type="file" className="file-input w-full max-w-xs bg-blue-200" />
                         </div>
@@ -241,14 +241,14 @@ const AddArticles = () => {
                         {/* image */}
                         <div className="form-control w-full my-4 ">
                             <label className="label">
-                                <span className="label-text">Article Image</span>
+                                <span className="label-text dark:text-white">Article Image</span>
                             </label>
                             <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs bg-blue-200" />
                         </div>
                         {/* view */}
                         <div className="form-control w-full my-4 ">
                             <label className="label">
-                                <span className="label-text">View</span>
+                                <span className="label-text dark:text-white">View</span>
                             </label>
                             <input
                                 type="number"
@@ -263,7 +263,7 @@ const AddArticles = () => {
                     {/* article details */}
                     <div className="form-control mb-2">
                         <label className="label">
-                            <span className="label-text">Description</span>
+                            <span className="label-text dark:text-white">Description</span>
                         </label>
                         <textarea {...register('description')} className="textarea textarea-bordered h-24" placeholder="description"></textarea>
                     </div>
