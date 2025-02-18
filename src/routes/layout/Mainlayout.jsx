@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const Mainlayout = () => {
     return (
-        <div className='bg-[#f7f9fb]'>
+        <div className='bg-[#f7f9fb] dark:bg-gray-800'>
             <Nav></Nav>
             <div className='min-h-[80vh]'>
             <Outlet></Outlet>

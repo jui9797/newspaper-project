@@ -38,7 +38,7 @@ useEffect(()=>{
 
    const {title, image, description,publisher, view, authorName,authorPhoto, authorEmail, postedDate,  tag, type } = single || {}
     return (
-        <div className='my-10'>
+        <div className='my-10 px-6 dark:text-white'>
             {
                 loading? <span className="loading loading-dots loading-lg"></span> :
                 <>
@@ -61,7 +61,7 @@ useEffect(()=>{
                         
                     </div>
                    <h2 className=' text-xl lg:text-2xl font-bold mb-4'>{title}</h2>
-                   <p className='text-gray-600 mb-4'>{description}</p> 
+                   <p className='text-gray-600 dark:text-white mb-4'>{description}</p> 
                    
                     <div>
                     <p><span className='font-bold'>Publisher:</span>{publisher}</p>

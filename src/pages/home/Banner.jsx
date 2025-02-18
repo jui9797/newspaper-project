@@ -5,13 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import "swiper/css/scrollbar";
 
 import './styles.css';
 // import img1 from '../../assets/pexels-katya-wolf-8715936.jpg'
 // import img2 from '../../assets/pexels-nietjuh-3123898.jpg'
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Scrollbar } from 'swiper/modules';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
@@ -35,21 +36,17 @@ const axiosPublic =useAxiosPublic()
     
 
     return (
-        <div className='w-full h-[300px] md:h-[450px] lg:h-[500px]'>
+        <div className='w-full h-[300px] md:h-[450px] lg:h-[580px]'>
             <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-            >
+      // Install Swiper modules
+      modules={[Autoplay, Pagination, Scrollbar]}
+      spaceBetween={50}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto change every 3s
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+    >
                 {/* article array empty */}
                 {
                     loading && (<SwiperSlide >

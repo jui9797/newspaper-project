@@ -18,9 +18,9 @@ const Statistic = () => {
 
             {/* stats */}
 
-            <div className="stats stats-vertical lg:stats-horizontal shadow w-full my-6 lg:my-10">
+            <div className="stats stats-vertical lg:stats-horizontal shadow w-full my-6 lg:my-10 bg-pink-300 dark:bg-purple-200">
                 <div className="stat text-center">
-                    <div className="stat-title">All Users</div>
+                    <div className="stat-title text-black">All Users</div>
                     <div className="stat-value">
                         {/* CountUp Component */}
                         <CountUp
@@ -34,7 +34,7 @@ const Statistic = () => {
                 </div>
 
                 <div className="stat text-center">
-                    <div className="stat-title">Normal Users</div>
+                    <div className="stat-title text-black">Normal Users</div>
                     <div className="stat-value">
                     <CountUp
                             key={users.length} 
@@ -47,7 +47,7 @@ const Statistic = () => {
                 </div>
 
                 <div className="stat text-center">
-                    <div className="stat-title">Premium Users</div>
+                    <div className="stat-title text-black">Premium Users</div>
                     <div className="stat-value">
                     <CountUp
                             key={premiumUsers.length} 

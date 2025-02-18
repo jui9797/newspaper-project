@@ -10,6 +10,7 @@ import Faq from './Faq';
 import { useNavigate } from 'react-router-dom';
 import usePremium from '../../hooks/usePremium';
 import useAdmin from '../../hooks/useAdmin';
+import ExclusiveNews from './ExclusiveNews';
 
 const Home = () => {
 
@@ -43,9 +44,10 @@ const Home = () => {
             <div className='my-10 lg:my-20'>
             <Publisers></Publisers>
             </div>
-            <div className='my-10 lg:my-20'>
+            <div className='my-10 lg:my-28'>
             <Statistic></Statistic>
             </div>
+            <ExclusiveNews></ExclusiveNews>
             <div className='my-10 lg:my-20'>
             <Plans></Plans>
             </div>

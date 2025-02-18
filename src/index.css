@@ -7,8 +7,9 @@
 @tailwind utilities;
 
 .active{
-    color:black;
+    color:rgb(168, 85, 247);
     font-weight: bolder;
+    
 }
 .lora{
     font-family: "Lora", serif;
@@ -16,3 +17,5 @@
 .inter{
     font-family: "Inter", serif;
 }
+
+/* button css */
