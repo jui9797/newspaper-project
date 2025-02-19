@@ -127,7 +127,7 @@ const AdminArticleCard = ({ data }) => {
             <div className='h-[200px]'>
                 <img className='h-full w-full' src={image} alt="" />
             </div>
-            <div className='h-[250px] pt-2 p-2 '>
+            <div className='h-[250px] pt-2 p-2 dark:bg-white '>
                 <div className='flex flex-col lg:flex-row justify-between'>
                     <div className='flex gap-2'>
                         <img className='w-8 h-8 lg:w-12 lg:h-12 rounded-full ' src={authorPhoto} alt=" img" />

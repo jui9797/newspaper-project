@@ -55,18 +55,18 @@ const AllUsers = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl lg:text-3xl font-bold text-center lora my-4">
+    <div className="h-screen">
+      <h2 className="text-2xl lg:text-3xl font-bold text-center lora my-4 dark:text-white">
         All users: {allUsers}
       </h2>
       {/* Table */}
       <div>
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="table dark:text-white">
             {/* Table Head */}
-            <thead>
+            <thead className="dark:text-white">
               <tr>
-                <th>#</th>
+                <th></th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Photo</th>
@@ -105,7 +105,7 @@ const AllUsers = () => {
         </div>
         {/* Pagination */}
         <div>
-          <Stack spacing={2} className="mt-4 lg:mt-8 ml-4 items-center">
+          <Stack spacing={2} className="mt-4 lg:mt-8 ml-4 items-center dark:bg-white">
             <Pagination
               count={totalPages}
               page={currentPage}

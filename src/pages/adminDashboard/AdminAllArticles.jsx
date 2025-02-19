@@ -34,7 +34,7 @@ useEffect(()=>{
 
     return (
         <div className='my-10'>
-            <h2 className='text-2xl lg:text-3xl text-center lora mb-4'>All Articles</h2>
+            <h2 className='text-2xl lg:text-3xl text-center lora mb-4 dark:text-white'>All Articles</h2>
 
             {
                 loading ?
@@ -48,7 +48,7 @@ useEffect(()=>{
                         </div>
                     )
             }
-            <div className='flex justify-center items-center my-4'>
+            <div className='flex justify-center items-center my-4 dark:bg-white'>
                 <Stack spacing={2}>
 
                     <Pagination count={totalPage} page={currentPage} onChange={handlePagination} variant="outlined" shape="rounded" />
