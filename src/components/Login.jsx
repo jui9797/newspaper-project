@@ -112,7 +112,9 @@ const Login = () => {
     const handleAdminLogin=()=>{
     setEmail('helly@gmail.com')
     setPassword('asdA12#')
+    
     }
+
 
     return (
         <div className='lora'>
