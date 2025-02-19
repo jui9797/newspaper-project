@@ -26,7 +26,7 @@ useEffect(() => {
                 <img className='md:h-[187px] h-full w-full' src={data.image} alt="" />
             </div>
             <div className='flex flex-col space-y-1 lg:space-y-2 dark:bg-purple-200  px-2 h-[200px]'>
-                <h2 className='font-bold'>{data.title}</h2>
+                <h2 className='font-bold'>{`${data.title.substring(0, 55)}`}</h2>
                 <p><span className='font-bold'>Publisher:</span>{data.publisher}</p>
                 <p><span className='font-bold'>Type:</span>{data.type}</p>
                 <p><span className='font-bold'>Description:</span>{`${data.description.substring(0, 30)}...`}</p>
