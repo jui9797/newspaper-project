@@ -15,6 +15,8 @@ const Login = () => {
     const location = useLocation();
     const [error, setError] = useState('')
     const axiosPublic = useAxiosPublic()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
 
     const from = location.state?.from?.pathname || "/";
@@ -107,6 +109,11 @@ const Login = () => {
             })
     }
 
+    const handleAdminLogin=()=>{
+    setEmail('helly@gmail.com')
+    setPassword('asdA12#')
+    }
+
     return (
         <div className='lora'>
             <div className="hero min-h-screen bg-base-200">
@@ -116,18 +123,19 @@ const Login = () => {
                         <img className='w-2/3 h-2/3 lg:w-1/2 lg:h-1/2  mx-auto' src={loginPhoto} alt="login img" />
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                    <button onClick={handleAdminLogin} className='btn bg-blue-400 text-white'> Demo Admin</button>
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                                <input type="email" name="email" defaultValue={email} placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <input type="password" name="password" defaultValue={password} placeholder="password" className="input input-bordered" />
 
                             </div>
 
