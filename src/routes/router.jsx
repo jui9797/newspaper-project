@@ -21,6 +21,7 @@ import MyArticles from "../pages/myArticles/MyArticles";
 import UpdateArticle from "../components/UpdateArticle";
 import Payment from "../pages/subscription/Payment";
 import Subscription from "../pages/subscription/Subscription";
+import About from "../pages/about/About";
 // import SubscriptionPage from "../pages/subscription/Subscription";
 
 const router = createBrowserRouter([
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/details/:id',
-            element:<Private><Details></Details></Private>
+            element:<Details></Details>
         },
         {
             path:'/premium',
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
         {
             path:'/update/:id',
             element: <UpdateArticle></UpdateArticle>
+        },
+        {
+            path:'/about',
+            element:<About></About>
         }
       ]
     },

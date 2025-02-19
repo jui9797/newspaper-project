@@ -19,8 +19,15 @@ const Nav = () => {
     const links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/allArticles'>All Articles</NavLink>
-        <NavLink to='/addArticles'>Add Articles</NavLink>
-        <NavLink to='/subscription'>Subscription</NavLink>
+        <NavLink to='/about'>About Us</NavLink>
+        {
+            user && <NavLink to='/addArticles'>Add Articles</NavLink>
+        }
+        {
+            user && <NavLink to='/subscription'>Subscription</NavLink>
+        }
+        
+        
         {
             isAdmin && <NavLink to='/dashboard/home'>Dashboard</NavLink>
         }
@@ -31,7 +38,9 @@ const Nav = () => {
             isAdmin && <NavLink to='/premium'>Premium Articles</NavLink>
         }
 
-        <NavLink to='/myArticles'>My Articles</NavLink>
+        {
+            user && <NavLink to='/myArticles'>My Articles</NavLink>
+        }
 
     </>
 

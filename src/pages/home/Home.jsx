@@ -25,7 +25,7 @@ const Home = () => {
         if (!isPremium && !isAdmin) { 
           const timer = setTimeout(() => {
             setShowModal(true);
-          }, 10000); 
+          }, 30000); 
     
           return () => clearTimeout(timer); 
         }
