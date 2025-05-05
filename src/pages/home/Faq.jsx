@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser';
 import newsphoto from '../../assets/Newsletter-bro.png'
 import SectionTitle from '../../shared/SectionTitle';
 import Swal from 'sweetalert2';
+import lottieImg from '../../../public/Animation - 1746423336502.json'
+import Lottie from 'lottie-react';
 
 const Faq = () => {
 
@@ -43,7 +45,8 @@ const Faq = () => {
 
                 {/* image */}
                 <div className='h-[250px] lg:h-[450px]'>
-                    <img className='h-full w-full' src={newsphoto} alt="" />
+                    {/* <img className='h-full w-full' src={newsphoto} alt="" /> */}
+                    <Lottie className='h-full w-full' animationData={lottieImg}></Lottie>
                 </div>
 
                 {/* newsletter */}
