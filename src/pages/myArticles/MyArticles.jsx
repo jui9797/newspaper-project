@@ -57,7 +57,7 @@ const handleDelete = (id) => {
 
 
     return (
-        <div className='my-10'>
+        <div className='my-10 px-4 lg:px-8'>
             <HelmetTitle title="My Articles || Trendify"></HelmetTitle>
             <h2 className='text-3xl text-center lora font-bold'>My Articles: {article.length}</h2>
             {loading && <p>Loading..</p>}
