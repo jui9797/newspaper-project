@@ -24,11 +24,11 @@ const ExclusiveNews = () => {
 
     useEffect(() => {
         AOS.init({
-          duration: 1000, 
-          easing: "ease-in-out", 
-          once: true, 
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
         });
-      }, []);
+    }, []);
 
 
     return (
@@ -40,33 +40,35 @@ const ExclusiveNews = () => {
                 }
                 {
                     articles.map(article =>
-                        <div data-aos="zoom-in" key={article._id} className="card bg-base-100 shadow-xl h-[470px] rounded-lg">
-                        <figure>
-                            <img
-                            className=" h-[220px] w-full"
-                                src={article.image}
-                                alt="Album" />
-                        </figure>
-                        <div className="card-body h-[250px] dark:bg-purple-200">
-                            <h2 className="card-title lora font-bold">{article.title}</h2>
-                            <p>{`${article.description.substring(0, 40)}...`}</p>
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    {/* customized button */}
-                                    
-                                <button className="btn text-blue-500 border-2 bg-transparent border-blue-500 font-bold hover:bg-blue-500 hover:text-white hover:border-none"><Link to={`/details/${article._id}`}>See More</Link></button>
-                                </div>
-                               
-                                <div className="flex gap-2 items-center">
-                                    <p><ImEye /></p>
-                                <p>{article.view}</p>
+                        <div data-aos="zoom-in" key={article._id} className="card bg-indigo-100 shadow-xl h-[470px] rounded-lg">
+                            <figure>
+                                <img
+                                    className=" h-[220px] w-full"
+                                    src={article.image}
+                                    alt="Album" />
+                            </figure>
+                            <div className="card-body h-[250px] dark:bg-purple-200">
+                                <h2 className="card-title lora font-bold">{article.title}</h2>
+                                <p>{`${article.description.substring(0, 40)}...`}</p>
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        {/* customized button */}
+
+                                        <button className="btn text-blue-500 border-2 bg-transparent border-blue-500 font-bold hover:bg-blue-500 hover:text-white hover:border-none"><Link to={`/details/${article._id}`}>See More</Link></button>
+                                    </div>
+
+                                    <div className="flex gap-2 items-center">
+                                        <p className="inline-block transition-transform duration-300 hover:scale-125 hover:text-blue-500 cursor-pointer lg:text-2xl">
+                                            <ImEye />
+                                        </p>
+                                        <p>{article.view}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                     )
+                    )
                 }
-               
+
             </div>
         </div>
     );
