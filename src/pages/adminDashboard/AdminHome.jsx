@@ -87,7 +87,7 @@ const AdminHome = () => {
             <h2 className='text-2xl lora font-bold mb-4 lg:mb-8 text-center dark:text-white'>Welcome {user?.displayName}</h2>
             {
                 loading && <>
-                <div className='flex justify-center items-center text-3xl'>
+                <div className='flex justify-center h-screen items-center text-7xl'>
                 <span className="loading loading-dots loading-lg"></span>
                 </div>
                 </>
