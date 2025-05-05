@@ -38,7 +38,7 @@ const Subscription = () => {
         <p className="mt-4 text-lg">Choose a subscription plan and enjoy exclusive benefits.</p>
       </div>
 
-      <div className="subscription-content max-w-3xl mx-auto p-6 bg-white shadow-md mt-6">
+      <div className="subscription-content max-w-3xl mx-auto lg:mt-4 p-6 bg-indigo-100 shadow-md mt-6 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4">Select Subscription Plan</h2>
 
         <div className="mb-4">
