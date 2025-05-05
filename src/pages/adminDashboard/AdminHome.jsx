@@ -96,7 +96,7 @@ const AdminHome = () => {
             {/* dynamic stats */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 lora'>
                 {/* publisher stats */}
-                <div className='h-[120px] bg-pink-300 p-4 text-center rounded-lg text-white'>
+                <div className='h-[120px] bg-indigo-200 p-4 text-center rounded-lg text-gray-800'>
                     <div className='flex justify-center items-center gap-2'>
                         <h2 className='text-2xl font-bold'>All Publishers</h2>
                         <p className='text-2xl'><SiAffinitypublisher /></p>
@@ -104,7 +104,7 @@ const AdminHome = () => {
                     <h2 className='text-2xl font-bold'>{articles.length}</h2>
                 </div>
                 {/* articles stats */}
-                <div className='h-[120px] bg-blue-300 p-4 text-center rounded-lg text-white'>
+                <div className='h-[120px] bg-fuchsia-300 p-4 text-center rounded-lg text-gray-800'>
                     <div className='flex justify-center items-center gap-2'>
                         <h2 className='text-2xl font-bold'>All Articles</h2>
                         <p className='text-2xl'><PiArticleNyTimesFill /></p>
@@ -112,7 +112,7 @@ const AdminHome = () => {
                     <h2 className='text-2xl font-bold'>{article.length}</h2>
                 </div>
                 {/* users stats */}
-                <div className='h-[120px] bg-yellow-300 p-4 text-center rounded-lg text-white'>
+                <div className='h-[120px] bg-yellow-200 p-4 text-center rounded-lg text-gray-800'>
                     <div className='flex justify-center items-center gap-2'>
                         <h2 className='text-2xl font-bold'>All Users</h2>
                         <p className='text-2xl'><HiOutlineUsers /></p>
@@ -120,7 +120,7 @@ const AdminHome = () => {
                     <h2 className='text-2xl font-bold'>{users.length}</h2>
                 </div>
                 {/* top-articles */}
-                <div className='h-[120px] bg-blue-300 p-4 text-center rounded-lg text-white'>
+                <div className='h-[120px] bg-blue-200 p-4 text-center rounded-lg text-gray-800'>
                     <div className='flex justify-center items-center gap-2'>
                         <h2 className='text-2xl font-bold'>Latest Articles</h2>
                         <p className='text-2xl'><PiArticleNyTimesBold /></p>
