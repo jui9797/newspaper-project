@@ -33,11 +33,11 @@ const AddArticles = () => {
         const imageFile = e.target.authorPhoto.files[0];
         // console.log(imageFile)
         const formData = new FormData();
-            formData.append("image", imageFile);
+        formData.append("image", imageFile);
 
-            // const imageResponse = await axiosPublic.post(image_hosting_api, formData);
-            // console.log(imageResponse.data.success)
-            // console.log(image_hosting_api)
+        // const imageResponse = await axiosPublic.post(image_hosting_api, formData);
+        // console.log(imageResponse.data.success)
+        // console.log(image_hosting_api)
         try {
             // Image upload function
             const uploadImage = async (imageFile) => {
@@ -49,7 +49,7 @@ const AddArticles = () => {
                 });
 
                 if (response.data.success) {
-                    return response.data.data.display_url; 
+                    return response.data.data.display_url;
                 } else {
                     throw new Error('Image upload failed');
                 }
@@ -75,13 +75,13 @@ const AddArticles = () => {
                 status: data.status,
                 tag: data.tag,
                 type: data.type,
-                
-               
-                
-                
+
+
+
+
             };
 
-            
+
             const response = await axiosPublic.post('/articles', articleData);
 
             if (response.data.insertedId) {
@@ -107,9 +107,9 @@ const AddArticles = () => {
 
 
     return (
-        <div className='my-10  px-6'>
+        <div className='my-10  px-6 lg:px-12'>
             <HelmetTitle title="Add Article || Trendify"></HelmetTitle>
-            <h2 className='text-2xl lora font-bold dark:text-white'>Add an article</h2>
+            <h2 className='text-2xl lora font-bold dark:text-white lg:mb-6'>Add an article</h2>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='border-2 p-2'>
 
@@ -270,9 +270,11 @@ const AddArticles = () => {
 
 
 
-                    <button className="btn">
+                   <div className='flex justify-center my-4'>
+                   <button className="w-1/2 btn bg-blue-400 text-white hover:bg-blue-500 transform transition duration-300 hover:scale-105 border-none">
                         Add Article
                     </button>
+                   </div>
                 </form>
             </div>
         </div>
