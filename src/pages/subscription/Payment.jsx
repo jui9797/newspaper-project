@@ -13,8 +13,10 @@ const Payment = () => {
     const {price} = useParams()
     
     return (
-        <div>
+        <div className='px-4 lg:px-12 py-4'>
+           <div className='mb-6 lg:mb-12'>
            <SectionTitle heading='Payment Here' subHeading='Payment'></SectionTitle>
+           </div>
            <Elements stripe={stripePromise}>
             <CheckoutForm price={price}></CheckoutForm>
            </Elements>
